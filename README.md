@@ -1,6 +1,6 @@
 # China IP Tools — Free Browser Tools for China Trademarks 🇨🇳🛠️
 
-**[▶ Open the live tools](https://fangwenhe.github.io/china-ip-tools/)** (custom domain: tools.huaqingip.com)
+**[▶ Open the live tools](https://huaqingip.com/china-ip-tools/)**
 
 A growing collection of **free, zero-dependency browser tools** for foreign brand owners, cross-border sellers (Amazon, TikTok Shop, Tmall Global) and overseas IP firms dealing with **China (CNIPA) trademarks and intellectual property**. No sign-up, no server, no data collection — every tool is a single HTML file that runs locally in your browser.
 
