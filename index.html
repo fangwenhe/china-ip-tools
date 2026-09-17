@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free China Trademark & IP Tools — CNIPA Fee Calculator, Risk Check | Huaqing IP</title>
+<meta name="description" content="Free browser tools for registering and protecting trademarks in China (CNIPA): official fee calculator (CNY/USD), first-to-file & squatting risk self-check, Nice class picker, filing timeline. No sign-up, runs in your browser.">
+<meta name="keywords" content="china trademark fee calculator, CNIPA fees, china trademark cost, trademark squatting check, china first-to-file, china trademark tools, register trademark in china">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://tools.huaqingip.com/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free China Trademark & IP Tools | Huaqing IP">
+<meta property="og:description" content="CNIPA fee calculator, first-to-file/squatting risk check and more — free, no sign-up, runs in your browser.">
+<meta property="og:url" content="https://tools.huaqingip.com/">
+<meta property="og:site_name" content="Huaqing IP Tools">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23d4a24e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%231a1407' font-family='Arial' font-weight='bold'>IP</text></svg>">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
+  a{color:var(--acc);text-decoration:none}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 18px}
+  /* nav */
+  header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(15,20,32,.92);backdrop-filter:blur(8px);z-index:10}
+  .nav{display:flex;justify-content:space-between;align-items:center;height:60px}
+  .brand{font-weight:800;font-size:17px;letter-spacing:.3px}
+  .brand span{color:var(--acc)}
+  .nav a.navcta{background:var(--acc);color:#1a1407;font-weight:700;padding:8px 15px;border-radius:8px;font-size:13.5px}
+  /* hero */
+  .hero{padding:58px 0 34px;text-align:center}
+  .hero h1{font-size:34px;line-height:1.25;letter-spacing:-.5px;margin-bottom:14px}
+  .hero h1 em{font-style:normal;color:var(--acc)}
+  .hero p{color:var(--mut);font-size:16px;max-width:640px;margin:0 auto 22px}
+  .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}
+  .badge{border:1px solid var(--line);border-radius:999px;padding:5px 13px;font-size:12.5px;color:var(--mut)}
+  .badge b{color:var(--ok);font-weight:700}
+  /* tools grid */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:26px 0 10px}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,border-color .15s}
+  .tool:hover{transform:translateY(-3px);border-color:var(--acc)}
+  .tool .thumb{width:100%;aspect-ratio:16/10;object-fit:cover;border-bottom:1px solid var(--line);background:#0c111c}
+  .tool .body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1}
+  .tool h3{font-size:18px;margin-bottom:7px}
+  .tool p{color:var(--mut);font-size:13.5px;flex:1}
+  .tool .open{margin-top:14px;display:inline-block;background:var(--acc);color:#1a1407;font-weight:700;padding:9px 16px;border-radius:9px;font-size:14px;text-align:center}
+  .tag{display:inline-block;font-size:11px;color:var(--acc);border:1px solid var(--line);border-radius:6px;padding:2px 8px;margin-bottom:9px;letter-spacing:.4px;text-transform:uppercase}
+  /* coming soon */
+  .soon{padding:30px 0 10px}
+  .soon h2{font-size:20px;margin-bottom:14px}
+  .soonlist{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .soonitem{border:1px dashed var(--line);border-radius:12px;padding:15px;font-size:13.5px;color:var(--mut)}
+  .soonitem b{color:var(--txt);display:block;margin-bottom:4px;font-size:14.5px}
+  /* why */
+  .why{padding:36px 0}
+  .why h2{font-size:22px;margin-bottom:18px;text-align:center}
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .feat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .feat h4{font-size:15px;margin-bottom:6px}
+  .feat p{font-size:13px;color:var(--mut)}
+  /* cta */
+  .ctabox{background:linear-gradient(135deg,#1c2740,#162033);border:1px solid var(--line);border-radius:18px;padding:36px 26px;text-align:center;margin:30px 0}
+  .ctabox h2{font-size:24px;margin-bottom:10px}
+  .ctabox p{color:var(--mut);max-width:560px;margin:0 auto 20px;font-size:14.5px}
+  .btn{display:inline-block;background:var(--acc);color:#1a1407;font-weight:800;padding:13px 26px;border-radius:10px;font-size:15px}
+  .btn.ghost{background:none;border:1px solid var(--line);color:var(--mut);margin-left:10px;font-weight:600}
+  /* faq */
+  .faq{padding:20px 0 40px;max-width:760px;margin:0 auto}
+  .faq h2{font-size:22px;margin-bottom:14px}
+  details{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px 16px;margin-bottom:10px}
+  summary{font-weight:600;font-size:14.5px;cursor:pointer}
+  details p{color:var(--mut);font-size:13.5px;margin-top:9px}
+  footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--mut)}
+  .foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--mut)}
+  footer a:hover{color:var(--acc)}
+  @media(max-width:720px){
+    .grid{grid-template-columns:1fr}
+    .soonlist,.feats{grid-template-columns:1fr}
+    .hero h1{font-size:26px}
+    .btn.ghost{margin-left:0;margin-top:10px}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Huaqing <span>IP Tools</span></div>
+    <a class="navcta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Free consultation</a>
+  </div>
+</header>
+
+<section class="wrap hero">
+  <h1>Free tools to <em>register & protect</em> your trademark in China</h1>
+  <p>China is a <b>first-to-file</b> jurisdiction — file late and a squatter can own your brand. Estimate fees, score your risk and plan filings in minutes. Built by a CNIPA-recorded Chinese agency.</p>
+  <div class="badges">
+    <span class="badge"><b>✓</b> 100% free</span>
+    <span class="badge"><b>✓</b> No sign-up</span>
+    <span class="badge"><b>✓</b> Runs in your browser</span>
+    <span class="badge"><b>✓</b> No data collected</span>
+  </div>
+</section>
+
+<section class="wrap grid">
+  <div class="tool">
+    <img class="thumb" src="assets/fee-calculator.jpg" alt="China Trademark Fee Calculator showing CNIPA official fees in CNY and USD and total budget">
+    <div class="body">
+      <span class="tag">Cost planning</span>
+      <h3>China Trademark Fee Calculator</h3>
+      <p>Pick your Nice classes and items to instantly see CNIPA official fees (CNY + USD), foreign-applicant paperwork costs, typical agency fees and your all-in budget.</p>
+      <a class="open" href="trademark-fee-calculator.html">Open calculator →</a>
+    </div>
+  </div>
+  <div class="tool">
+    <img class="thumb" src="assets/risk-check.jpg" alt="China Trademark Risk Self-Check showing first-to-file and squatting exposure score">
+    <div class="body">
+      <span class="tag">Risk diagnosis</span>
+      <h3>China Trademark Risk Self-Check</h3>
+      <p>Answer 10 quick questions and instantly score your first-to-file / squatting exposure, with concrete next steps and any urgent deadlines (opposition, refusal review).</p>
+      <a class="open" href="trademark-risk-check.html">Start self-check →</a>
+    </div>
+  </div>
+</section>
+
+<section class="wrap soon">
+  <h2>More free tools coming</h2>
+  <div class="soonlist">
+    <div class="soonitem"><b>Nice Class Picker (45 classes)</b>Bilingual EN–中文 class finder with China-specific standard goods/services items to avoid overpaying.</div>
+    <div class="soonitem"><b>Filing Timeline Calculator</b>Enter your filing date to see acceptance, examination, publication and registration dates plus response deadlines.</div>
+    <div class="soonitem"><b>Chinese Name Strategy Helper</b>Plan the Chinese-character / pinyin version of your brand that Chinese customers actually search.</div>
+  </div>
+</section>
+
+<section class="wrap why">
+  <h2>Why these tools exist</h2>
+  <div class="feats">
+    <div class="feat"><h4>First-to-file is unforgiving</h4><p>Whoever files first usually owns the mark in China — regardless of who used it first overseas. Many brands learn this only after being squatted.</p></div>
+    <div class="feat"><h4>Pricing is opaque abroad</h4><p>Official CNIPA fees are low (CNY 270/class online) but foreign applicants also face translation, legalization and agency fees. We make the total visible.</p></div>
+    <div class="feat"><h4>Deadlines are short</h4><p>Opposition windows (3 months) and refusal reviews (15 days) are easy to miss from overseas. The tools flag what is urgent.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="ctabox">
+    <h2>Need a CNIPA-recorded agent to actually file?</h2>
+    <p>Huaqing Innovation (Huaqing IP / 华青创新) files China national trademarks and Madrid China-phase responses for foreign brand owners, Amazon/TikTok/Tmall sellers and overseas law firms. Get an exact quote in a free 30-minute call.</p>
+    <a class="btn" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book free 30-min consult</a>
+    <a class="btn ghost" href="https://huaqingip.com">Visit main site</a>
+  </div>
+</section>
+
+<section class="wrap faq">
+  <h2>Frequently asked questions</h2>
+  <details><summary>Are the tools really free?</summary><p>Yes. They are single-file pages that run entirely in your browser. There is no login, no payment and no data is sent anywhere.</p></details>
+  <details><summary>How accurate is the fee calculator?</summary><p>It uses published CNIPA official fees (CNY 270/class online for the first 10 items, plus per-item overage) and a market range for agency fees. Treat results as planning figures; confirm live rates before filing.</p></details>
+  <details><summary>Can a foreigner file a China trademark directly?</summary><p>No — a foreign applicant without a residence or business premises in China must use a CNIPA-recorded Chinese trademark agent. That is the service we provide.</p></details>
+  <details><summary>Do these tools give legal advice?</summary><p>No, they are general self-assessment and planning aids, not legal advice. For your specific case, book a consultation or consult a qualified Chinese IP professional.</p></details>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>© 2026 Huaqing Innovation (Huaqing IP / 华青创新) · CNIPA-recorded trademark agency</div>
+    <div>
+      <a href="https://huaqingip.com">Main site</a> ·
+      <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a> ·
+      <a href="https://github.com/fangwenhe/china-trademark-toolkit" target="_blank" rel="noopener">Open-source toolkit</a>
+    </div>
+  </div>
+</footer>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","name":"Huaqing Innovation (Huaqing IP)","url":"https://huaqingip.com","logo":"https://tools.huaqingip.com/assets/risk-check.jpg","email":"ip@huaqingip.com","sameAs":["https://github.com/fangwenhe/china-trademark-toolkit","https://github.com/fangwenhe/china-ip-tools","https://calendly.com/huaqingip/30min"]},
+    {"@type":"WebSite","name":"Huaqing IP Tools","url":"https://tools.huaqingip.com/"},
+    {"@type":"ItemList","itemListElement":[
+      {"@type":"SoftwareApplication","name":"China Trademark Fee Calculator","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://tools.huaqingip.com/trademark-fee-calculator.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},
+      {"@type":"SoftwareApplication","name":"China Trademark Risk Self-Check","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://tools.huaqingip.com/trademark-risk-check.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+    ]}
+  ]
+}
+</script>
+</body>
+</html>
