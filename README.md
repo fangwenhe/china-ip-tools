@@ -10,12 +10,14 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 |---|---|---|
 | **China Trademark Fee Calculator** | CNIPA official fees (CNY + USD), foreign paperwork, agency fee range, all-in budget | [Open](trademark-fee-calculator.html) |
 | **China Trademark Risk Self-Check** | 10-question first-to-file / squatting exposure score with next steps | [Open](trademark-risk-check.html) |
+| **Nice Class Picker (45 classes)** | Searchable EN–中文 class finder with business-type presets and fee estimate | [Open](nice-class-picker.html) |
+| **Filing Timeline & Deadline Calculator** | Milestone dates from filing date + 15-day refusal / 3-month opposition deadlines | [Open](filing-timeline-calculator.html) |
 
 ### Coming soon
 
-- **Nice Class Picker** — bilingual 45-class finder with China-specific standard items
-- **Filing Timeline Calculator** — acceptance / examination / publication dates and response deadlines
 - **Chinese Name Strategy Helper** — plan the Chinese-character / pinyin version of a brand
+- **Madrid China-phase Fee Calculator** — WIPO fees plus CNIPA China-phase requirements
+- **Non-use Cancellation (撤三) Checker** — assess whether a squatter's idle mark is vulnerable
 
 ## Why
 
