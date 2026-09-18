@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Non-Use Cancellation (撤三) Risk Checker | Huaqing IP</title>
+<meta name="description" content="Is your China trademark vulnerable to a 3-year non-use cancellation (撤三)? Enter the registration date to see the risk window and what use-evidence to keep.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}.hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  input[type=date]{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:15px;color-scheme:dark}
+  .status{padding:14px 16px;border-radius:11px;margin-top:12px;font-size:14.5px;font-weight:600}
+  .ok{background:rgba(63,166,110,.12);color:var(--ok);border:1px solid var(--ok)}
+  .warn{background:rgba(224,162,60,.12);color:var(--warn);border:1px solid var(--warn)}
+  .bad{background:rgba(221,93,93,.12);color:var(--bad);border:1px solid var(--bad)}
+  h3{font-size:16px;margin:18px 0 8px}.tip{font-size:13.5px;color:var(--mut)}
+  ul{margin:6px 0 0 18px;font-size:13.5px;color:var(--mut)}.tip li{margin-bottom:5px}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Non-Use Cancellation (撤三) Risk Checker</h1>
+  <div class="sub">Any third party can cancel a registered China trademark that has not been genuinely used for 3 consecutive years. Check whether your mark is in the exposure window.</div>
+  <div class="card">
+    <label>Registration date <span class="hint">注册公告日</span></label>
+    <input type="date" id="reg">
+    <div class="status" id="st">Pick a registration date.</div>
+  </div>
+  <div class="card">
+    <h3>If exposed, keep this use evidence (使用证据)</h3>
+    <ul class="tip">
+      <li>Sales invoices, receipts and e-commerce order records showing the mark on real goods</li>
+      <li>Packaging, labels, tags with the mark affixed</li>
+      <li>Advertising, shows, distribution contracts — with dates and the mark visible</li>
+      <li>Use must be in China, on the registered goods/services, within the last 3 years</li>
+    </ul>
+    <div class="disc">Rough indicator only. "Use" is interpreted strictly by CNIPA; nominal/token use may be disregarded. Not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Fight a cancellation action</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+  function fmt(d){return d?d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}):'—'}
+  function render(){
+    var v=$('reg').value;if(!v)return;
+    var r=new Date(v+'T00:00:00Z');
+    var t=new Date(r);t.setUTCFullYear(t.getUTCFullYear()+3);
+    var today=new Date();
+    var st=$('st'),cls,msg;
+    if(today<t){
+      cls='ok';var months=Math.round((t-today)/(1000*60*60*24*30));
+      msg='Safe for now. The mark enters the cancellation-exposure window on '+fmt(t)+' (about '+months+' months away). Start keeping use records early.';
+    }else{
+      var years=((today-t)/(1000*60*60*24*365)).toFixed(1);
+      cls='bad';msg='EXPOSED: this mark has been registered over 3 years and anyone can file a 撤三 (non-use cancellation). If you are using it, gather evidence now; if you are NOT using it, a squatted/idle mark is at high risk.';
+    }
+    st.className='status '+cls;st.textContent=msg;
+  }
+  $('reg').addEventListener('input',render);
+  var d=new Date();d.setUTCFullYear(d.getUTCFullYear()-2);$('reg').value=d.toISOString().slice(0,10);render();
+})();
+</script>
+</body>
+</html>

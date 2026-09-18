@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Watch & Opposition Setup Checklist | Huaqing IP</title>
+<meta name="description" content="Step-by-step checklist to set up trademark watching in China: what to monitor, opposition windows, and how to act when a conflicting mark publishes.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  h3{font-size:15px;margin:14px 0 6px;color:var(--acc)}
+  label.item{display:flex;gap:9px;align-items:flex-start;font-size:14px;margin:10px 0;cursor:pointer}
+  label.item input{margin-top:4px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:12px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .meta{font-size:13px;color:var(--mut);margin-top:8px}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Trademark Watch &amp; Opposition Setup Checklist</h1>
+  <div class="sub">In China, conflicting marks are open to opposition for only <b>3 months</b> after preliminary publication. Set up a watch so you never miss the window.</div>
+  <div class="card">
+    <h3>1. Define what to watch</h3>
+    <label class="item"><input type="checkbox"><span>Your exact brand name (word mark)</span></label>
+    <label class="item"><input type="checkbox"><span>Phonetic / transliteration variants (pinyin, Chinese characters)</span></label>
+    <label class="item"><input type="checkbox"><span>Your logo / stylized mark</span></label>
+    <label class="item"><input type="checkbox"><span>Your key Nice classes (product + Class 35)</span></label>
+    <h3>2. Set the monitoring</h3>
+    <label class="item"><input type="checkbox"><span>Subscribe to CNIPA publication gazette alerts for your classes</span></label>
+    <label class="item"><input type="checkbox"><span>Review new publications at least monthly (3-month window is short)</span></label>
+    <label class="item"><input type="checkbox"><span>Keep prior-use evidence ready (date, channel, sales)</span></label>
+    <h3>3. When a conflict appears</h3>
+    <label class="item"><input type="checkbox"><span>Confirm it falls within the 3-month opposition window</span></label>
+    <label class="item"><input type="checkbox"><span>Gather your rights: your registration + prior-use proof + confusion arguments</span></label>
+    <label class="item"><input type="checkbox"><span>File the opposition via a CNIPA-recorded agent before the window closes</span></label>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+    <div class="disc">After the 3-month window, you must use invalidation instead (longer, costlier). A watch service is strongly recommended for active brands.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Set up watching with us</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var boxes=document.querySelectorAll('input');
+  function upd(){var n=0;boxes.forEach(function(b){if(b.checked)n++});var p=Math.round(n/boxes.length*100);
+    document.getElementById('bar').style.width=p+'%';
+    document.getElementById('prog').textContent='Progress: '+n+' / '+boxes.length+' ('+p+'%)';}
+  boxes.forEach(function(b){b.addEventListener('change',upd)});upd();
+})();
+</script>
+</body>
+</html>

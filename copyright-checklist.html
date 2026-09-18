@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Copyright Registration — Materials Checklist & Guide | Huaqing IP</title>
+<meta name="description" content="What do you need to register a copyright (works/software) in China? Interactive checklist by work type, with timing, cost and common mistakes.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  .type{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px}
+  .type div{border:1px solid var(--line);border-radius:9px;padding:9px 14px;font-size:13.5px;cursor:pointer;color:var(--mut);background:#0c111c}
+  .type div.on{border-color:var(--acc);color:var(--acc);background:rgba(212,162,78,.08)}
+  h3{font-size:15px;margin:16px 0 8px;color:var(--acc)}
+  label.item{display:flex;gap:9px;align-items:flex-start;font-size:14px;margin:9px 0;cursor:pointer;color:var(--txt)}
+  label.item input{margin-top:4px}
+  .meta{font-size:13.5px;color:var(--mut);margin-top:8px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:10px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China Copyright Registration — Materials Checklist</h1>
+  <div class="sub">National copyright registration (作品著作权 / 软著) in China has no official government fee, but the materials and format must be right or the application bounces. Pick your work type and tick what you have.</div>
+  <div class="card">
+    <div class="type" id="types">
+      <div data-v="art" class="on">Art / design / photo</div>
+      <div data-v="text">Written work</div>
+      <div data-v="audio">Audio / video</div>
+      <div data-v="software">Software (软著)</div>
+    </div>
+    <h3 id="t"></h3>
+    <div id="items"></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+    <div class="meta"><b>Typical timing:</b> 30–60 working days via an agent. <b>Official fee:</b> none for the certificate; you pay only service/translation costs. Registration is prima-facie evidence in disputes.</div>
+    <div class="disc">Checklist for planning; exact requirements follow the National Copyright Administration (CPCC). Not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Register with us</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var DATA={
+    art:["High-resolution file of the work (PNG/JPG, ≥300 DPI)","Title and 100–200 word description of the creative content","Date and place of first publication (or it is unpublished)","Author ID (passport for foreign authors)","Agency power of attorney (for foreign applicants)","If commissioned/work-for-hire: the commission agreement"],
+    text:["The complete manuscript (≤300 pages, PDF)","Title, genre and word count","First publication date and platform","Author ID + (for foreign authors) notarized/translated documents","If employee work: employer authorization"],
+    audio:["The audio file (MP3/WAV) or video (MP4)","Script/treatment and running time","Names of performers and producers (if applicable)","First publication date and platform","Author/rights-holder ID and power of attorney"],
+    software:["Source code: first 30 + last 30 consecutive pages (≥60 pages total; if fewer, submit all)","Software user manual or design document (PDF)","Software name + version number","Development date and first release date","Rights-holder ID and power of attorney","Confirmation that code does not infringe third-party rights"]
+  };
+  var titles={art:"Art / design / photography",text:"Written works (article, book, script)",audio:"Audio / video works",software:"Software copyright (计算机软件著作权)"};
+  var cur='art';
+  function render(){
+    document.getElementById('t').textContent=titles[cur];
+    var h='';DATA[cur].forEach(function(it,i){h+='<label class="item"><input type="checkbox" data-i="'+i+'"> <span>'+it+'</span></label>'});
+    document.getElementById('items').innerHTML=h;
+    document.querySelectorAll('#items input').forEach(function(c){c.addEventListener('change',upd)});
+    upd();
+  }
+  function upd(){
+    var all=document.querySelectorAll('#items input');var n=0;all.forEach(function(c){if(c.checked)n++});
+    var p=all.length?Math.round(n/all.length*100):0;
+    document.getElementById('bar').style.width=p+'%';
+    document.getElementById('prog').textContent='Ready: '+n+' / '+all.length+' ('+p+'%)'+(p===100?' — looks complete, you can file.':'');
+  }
+  document.querySelectorAll('#types div').forEach(function(d){
+    d.addEventListener('click',function(){document.querySelectorAll('#types div').forEach(function(x){x.classList.remove('on')});d.classList.add('on');cur=d.dataset.v;render();});
+  });
+  render();
+})();
+</script>
+</body>
+</html>

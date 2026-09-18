@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brand Name Checker — Is It Registrable in China? | Huaqing IP</title>
+<meta name="description" content="Type your brand name to get an instant heuristic check: distinctiveness, length, generic/descriptive risk, and whether it is likely registrable in China. Not a clearance search.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  input[type=text]{width:100%;background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:13px 14px;font-size:16px}
+  ul{list-style:none;padding:0;margin:14px 0 0}
+  li{padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;display:flex;gap:10px}
+  li:last-child{border-bottom:none}
+  .ic{flex:0 0 20px;font-weight:800}
+  .ok{color:var(--ok)}.warn{color:var(--warn)}.bad{color:var(--bad)}
+  .verdict{padding:14px 16px;border-radius:11px;margin-top:12px;font-weight:700;font-size:15px}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Is Your Brand Name Registrable in China?</h1>
+  <div class="sub">A quick heuristic check on distinctiveness — <b>not</b> a clearance search. It cannot see prior identical/similar marks; only a CNIPA database search can do that.</div>
+  <div class="card">
+    <input type="text" id="name" placeholder="Type your brand name, e.g. Nuvora, 乐食, SunBrew…">
+    <ul id="out"></ul>
+    <div class="verdict" id="v" style="display:none"></div>
+  </div>
+  <div class="card">
+    <div class="disc">This tool flags only naming problems (generic/descriptive, too short, likely deceptive). It does NOT check conflicts with existing marks. Before filing, run a proper CNIPA search.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Do a real clearance search</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var GENERIC=["coffee","shoes","software","beauty","food","clothes","shop","store","tech","smart","best","top","quality","china","chinese","china","trademark","brand"];
+  var $=function(id){return document.getElementById(id)};
+  function check(){
+    var n=$('name').value.trim();
+    var html='';var score=0;
+    if(!n){$('out').innerHTML='';$('v').style.display='none';return}
+    var lc=n.toLowerCase();
+    // length
+    if(n.length<3){html+='<li><span class="ic bad">✕</span><span>Too short (fewer than 3 characters/letters) — weak distinctiveness, often refused.</span></li>';score-=2;}
+    else{html+='<li><span class="ic ok">✓</span><span>Length is OK.</span></li>';score++;}
+    // purely generic word
+    var isGeneric=GENERIC.some(function(g){return lc===g});
+    var hasGeneric=GENERIC.some(function(g){return lc.indexOf(g)>=0});
+    if(isGeneric){html+='<li><span class="ic bad">✕</span><span>This is a common descriptive/generic word — cannot monopolize it.</span></li>';score-=3;}
+    else if(hasGeneric){html+='<li><span class="ic warn">!</span><span>Contains a common word ("'+GENERIC.find(function(g){return lc.indexOf(g)>=0})+'") — weaker; pair it with a coined/arbitrary word.</span></li>';score--;}
+    else{html+='<li><span class="ic ok">✓</span><span>No obvious generic/descriptive word.</span></li>';score++;}
+    // only common dictionary words
+    if(/^[a-z\s]+$/.test(lc) && lc.length>12){html+='<li><span class="ic warn">!</span><span>Long phrase of plain words — likely descriptive; a coined or arbitrary name is safer.</span></li>';score--;}
+    // pure numbers
+    if(/^[0-9]+$/.test(n)){html+='<li><span class="ic bad">✕</span><span>Pure numbers are weak and often refused.</span></li>';score-=2;}
+    html+='<li><span class="ic warn">!</span><span>Important: this says nothing about whether someone already owns a similar mark in your classes.</span></li>';
+    $('out').innerHTML=html;
+    var v=$('v'),cls,msg;
+    if(score>=2){cls='ok';msg='Looks registrable by name. Do a clearance search before filing.';v.style.background='rgba(63,166,110,.12)';v.style.color='var(--ok)';}
+    else if(score>=0){cls='warn';msg='Marginal — strengthen the name (coined/arbitrary word) or be ready for refusal.';v.style.background='rgba(224,162,60,.12)';v.style.color='var(--warn)';}
+    else{cls='bad';msg='High refusal risk. Rethink the name before spending filing fees.';v.style.background='rgba(221,93,93,.12)';v.style.color='var(--bad)';}
+    v.textContent=msg;v.style.display='block';
+  }
+  $('name').addEventListener('input',check);
+})();
+</script>
+</body>
+</html>

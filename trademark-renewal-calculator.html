@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Renewal & Grace-Period Calculator | Huaqing IP</title>
+<meta name="description" content="Enter your China trademark registration date to see the 10-year expiry, the 12-month renewal window, the 6-month grace period with surcharge, and the last safe day. Don't lose your mark to an missed renewal.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}.hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  input[type=date]{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:15px;color-scheme:dark}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+  td{padding:10px 4px;border-bottom:1px solid var(--line)}.d{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+  .status{padding:13px 15px;border-radius:11px;margin-top:12px;font-size:14px;font-weight:600}
+  .ok{background:rgba(63,166,110,.12);color:var(--ok);border:1px solid var(--ok)}
+  .warn{background:rgba(224,162,60,.12);color:var(--warn);border:1px solid var(--warn)}
+  .bad{background:rgba(221,93,93,.12);color:var(--bad);border:1px solid var(--bad)}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China Trademark Renewal &amp; Grace-Period Calculator</h1>
+  <div class="sub">China trademarks last 10 years. Renew up to 12 months before expiry; a 6-month grace period exists but costs a surcharge. Miss both and the mark dies.</div>
+  <div class="card">
+    <label>Registration date <span class="hint">(on the registration certificate / 注册公告日)</span></label>
+    <input type="date" id="reg">
+  </div>
+  <div class="card">
+    <table>
+      <tr><td>Renewal window opens (12 mo before expiry)</td><td class="d" id="w1">—</td></tr>
+      <tr><td>10-year expiry date</td><td class="d" id="exp">—</td></tr>
+      <tr><td>Grace period ends (6 mo after expiry, +surcharge)</td><td class="d" id="grace">—</td></tr>
+      <tr><td>Last possible day to keep the mark</td><td class="d" id="last">—</td></tr>
+    </table>
+    <div class="status" id="st">Pick a registration date.</div>
+    <div class="disc">Official renewal fee CNY 450/class (online); grace-period surcharge applies. Estimates only — confirm exact dates in CNIPA records.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Renew with us</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  function fmt(d){return d?d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'}):'—'}
+  function addY(d,y){var x=new Date(d);x.setUTCFullYear(x.getUTCFullYear()+y);return x}
+  function render(){
+    var v=$('reg').value;if(!v)return;
+    var r=new Date(v+'T00:00:00Z');
+    var exp=addY(r,10), w1=new Date(exp);w1.setUTCMonth(w1.getUTCMonth()-12);
+    var grace=new Date(exp);grace.setUTCMonth(grace.getUTCMonth()+6);
+    $('exp').textContent=fmt(exp);$('w1').textContent=fmt(w1);$('grace').textContent=fmt(grace);$('last').textContent=fmt(grace);
+    var today=new Date();
+    var st=document.getElementById('st'), cls='ok', msg='';
+    if(today>grace){cls='bad';msg='Overdue — the mark has lapsed and can no longer be renewed. It is now open for anyone to file.'}
+    else if(today>exp){cls='bad';msg='In the 6-month grace period — file immediately, surcharge applies, any delay risks total loss.'}
+    else if(today>=w1){cls='warn';msg='Renewal window is OPEN — file now to avoid the grace-period surcharge.'}
+    else {cls='ok';msg='Within term — renewal window opens '+fmt(w1)+'.'}
+    st.className='status '+cls;st.textContent=msg;
+  }
+  function $(id){return document.getElementById(id)}
+  $('reg').addEventListener('input',render);
+  var d=new Date();d.setUTCFullYear(d.getUTCFullYear()-9);$('reg').value=d.toISOString().slice(0,10);render();
+})();
+</script>
+</body>
+</html>

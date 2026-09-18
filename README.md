@@ -12,6 +12,14 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **China Trademark Risk Self-Check** | 10-question first-to-file / squatting exposure score with next steps | [Open](trademark-risk-check.html) |
 | **Nice Class Picker (45 classes)** | Searchable EN–中文 class finder with business-type presets and fee estimate | [Open](nice-class-picker.html) |
 | **Filing Timeline & Deadline Calculator** | Milestone dates from filing date + 15-day refusal / 3-month opposition deadlines | [Open](filing-timeline-calculator.html) |
+| **Renewal & Grace-Period Calculator** | 10-year expiry, renewal window & 6-month grace period | [Open](trademark-renewal-calculator.html) |
+| **Non-Use Cancellation (撤三) Checker** | 3-year exposure + use-evidence checklist | [Open](nonuse-cancellation-checker.html) |
+| **Amazon Brand Registry Eligibility** | Can your CNIPA mark enroll now? | [Open](amazon-brand-registry-checker.html) |
+| **Copyright Registration Checklist** | Materials by work type (art/text/audio/software) | [Open](copyright-checklist.html) |
+| **China vs US vs EU Comparison** | Cost, timeline & rules side by side | [Open](china-us-eu-comparison.html) |
+| **Brand Name Checker** | Distinctiveness / generic-word / length heuristic | [Open](brand-name-checker.html) |
+| **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |
+
 
 ### Coming soon
 
