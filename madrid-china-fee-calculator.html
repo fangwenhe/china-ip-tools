@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madrid Designation of China Fee Calculator (2026 WIPO Rates) | Huaqing IP</title>
+<meta name="description" content="Estimate the WIPO cost of designating China via the Madrid System: basic fee + China individual fee (220 CHF first class, 110 CHF each extra class, from April 2026) + class supplements. Includes the China phase timeline and office-action risk.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/madrid-china-fee-calculator.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}.hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  .stepper{display:inline-flex;align-items:center}
+  .stepper button{width:42px;height:44px;background:#0c111c;border:1px solid var(--line);color:var(--acc);font-size:20px;border-radius:9px;cursor:pointer}
+  .stepper input{text-align:center;border:none;background:inherit;color:inherit;width:80px;font-size:18px;height:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  select{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:14px;width:100%}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:6px}
+  td{padding:10px 4px;border-bottom:1px solid var(--line)}.d{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .total td{border-bottom:none;font-weight:700;padding-top:12px}.big{color:var(--acc);font-size:20px}
+  .warnbox{border:1px solid var(--warn);background:rgba(224,162,60,.08);border-radius:11px;padding:13px 15px;margin-top:12px;font-size:13px}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Madrid Designation of China — Fee Calculator</h1>
+  <div class="sub">WIPO Madrid individual fees for China, rates effective <b>12 April 2026</b>. Estimate only; WIPO's own eMadrid calculator governs the final amount.</div>
+
+  <div class="card">
+    <label>Mark type</label>
+    <select id="kind">
+      <option value="653" selected>Black & white (basic fee 653 CHF)</option>
+      <option value="903">Color (basic fee 903 CHF)</option>
+    </select>
+    <label>Number of Nice classes</label>
+    <div class="stepper"><button id="cMinus">−</button><input type="number" id="cls" value="3" min="1" max="45"><button id="cPlus">+</button></div>
+    <label>Designating China?</label>
+    <select id="cn">
+      <option value="1" selected>Yes (China individual fee applies)</option>
+      <option value="0">No (illustrative only)</option>
+    </select>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr><td>WIPO basic fee</td><td class="d" id="basic">—</td></tr>
+      <tr><td>China individual fee <span class="hint">(220 first class +110 each extra)</span></td><td class="d" id="cnfee">—</td></tr>
+      <tr><td class="muted">Supplemental fee <span class="hint">(classes beyond 3, ~100 CHF each)</span></td><td class="d" id="sup">—</td></tr>
+      <tr class="total"><td>Total WIPO fees</td><td class="d big" id="total">—</td></tr>
+    </table>
+    <div class="warnbox">
+      <b>China phase:</b> after WIPO registers your international mark, CNIPA examines China on substance within ~12–18 months and may issue an office action. Foreign applicants <b>must</b> respond through a CNIPA-recorded agent, in Chinese, within the deadline — otherwise the China designation is refused.
+    </div>
+    <div class="disc">CHF→USD shown at ~1.15. Individual fee for collective marks is 661/331 CHF. Rates source: WIPO Information Notice No. 9/2026. Not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Handle the China phase with us</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+  function r(){
+    var basic=+$('kind').value, n=Math.max(1,Math.min(45,+$('cls').value||1)), cn=+$('cn').value;
+    var cnfee = cn ? (220 + 110*(n-1)) : 0;
+    var sup = n>3 ? (n-3)*100 : 0;
+    var total=basic+cnfee+sup;
+    $('basic').textContent=basic+' CHF';
+    $('cnfee').textContent=cnfee?cnfee+' CHF':'—';
+    $('sup').textContent=sup?sup+' CHF':'—';
+    $('total').textContent=total+' CHF ≈ $'+Math.round(total*1.15);
+  }
+  $('kind').addEventListener('change',r);$('cn').addEventListener('change',r);
+  $('cMinus').onclick=function(){var v=+$('cls').value;$('cls').value=Math.max(1,v-1);r()};
+  $('cPlus').onclick=function(){var v=+$('cls').value;$('cls').value=Math.min(45,v+1);r()};
+  $('cls').addEventListener('input',r);
+  r();
+})();
+</script>
+</body>
+</html>
