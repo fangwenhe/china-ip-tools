@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNIPA Office Action / Refusal Response Checklist | Huaqing IP</title>
+<meta name="description" content="Received a China trademark refusal (驳回)? Interactive checklist of what to prepare for the 15-day refusal review, with common refusal grounds and next steps.">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:760px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  .alert{border:1px solid var(--bad);background:rgba(221,93,93,.1);color:var(--bad);border-radius:11px;padding:13px 15px;font-size:14px;font-weight:600;margin-bottom:14px}
+  h3{font-size:15px;margin:14px 0 6px;color:var(--acc)}
+  label.item{display:flex;gap:9px;align-items:flex-start;font-size:14px;margin:10px 0;cursor:pointer}
+  label.item input{margin-top:4px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:12px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .meta{font-size:13px;color:var(--mut);margin-top:8px}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CNIPA Refusal Response (驳回复审) Checklist</h1>
+  <div class="sub">Got a refusal (驳回通知)? The review must be filed within <b>15 days</b> of receipt. Gather these materials fast.</div>
+  <div class="alert">URGENT: 15-day clock starts the day you receive the refusal. Missing it means the application dies.</div>
+  <div class="card">
+    <h3>Common refusal reasons to address</h3>
+    <label class="item"><input type="checkbox"><span>Lack of distinctiveness (缺乏显著性)</span></label>
+    <label class="item"><input type="checkbox"><span>Likely to confuse with an earlier mark (与在先近似)</span></label>
+    <label class="item"><input type="checkbox"><span>Descriptive / generic goods (描述性)</span></label>
+    <h3>Gather for the review</h3>
+    <label class="item"><input type="checkbox"><span>The refusal notice (驳回通知书) and its date of receipt</span></label>
+    <label class="item"><input type="checkbox"><span>Your prior-use evidence: sales, ads, packaging showing the mark</span></label>
+    <label class="item"><input type="checkbox"><span>Distinctive history: awards, market share, media coverage</span></label>
+    <label class="item"><input type="checkbox"><span>Coexistence agreements or cancellation of the cited earlier mark</span></label>
+    <label class="item"><input type="checkbox"><span>Arguments explaining why your goods are not similar / not confusing</span></label>
+    <label class="item"><input type="checkbox"><span>Power of attorney for the CNIPA-recorded agent</span></label>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+    <div class="disc">Checklist for planning; a real response needs a written argument filed via a CNIPA-recorded agent. Not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Fight the refusal now</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var b=document.querySelectorAll('input');
+  function upd(){var n=0;b.forEach(function(x){if(x.checked)n++});var p=Math.round(n/b.length*100);
+    document.getElementById('bar').style.width=p+'%';
+    document.getElementById('prog').textContent='Ready: '+n+' / '+b.length;}
+  b.forEach(function(x){x.addEventListener('change',upd)});upd();
+})();
+</script>
+</body>
+</html>
