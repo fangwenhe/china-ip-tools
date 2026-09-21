@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Opposition Grounds Advisor — Can You Oppose? | Huaqing IP</title>
+<meta name="description" content="Answer a few questions to see whether you can oppose a conflicting China trademark, on what grounds (absolute vs relative), the 3-month window, the CNY 450 fee and the agent requirement.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/opposition-grounds-advisor.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  .q{font-size:14.5px;font-weight:600;margin:14px 0 8px}.q:first-child{margin-top:0}
+  .opts{display:flex;gap:8px;flex-wrap:wrap}
+  .opt{border:1px solid var(--line);border-radius:9px;padding:9px 14px;font-size:13.5px;cursor:pointer;color:var(--mut);background:#0c111c}
+  .opt.on{border-color:var(--acc);color:var(--acc);background:rgba(212,162,78,.08)}
+  .result{padding:15px 16px;border-radius:11px;margin-top:14px;font-size:14px;display:none}
+  .ok{background:rgba(63,166,110,.12);color:var(--ok);border:1px solid var(--ok)}
+  .warn{background:rgba(224,162,60,.12);color:var(--warn);border:1px solid var(--warn)}
+  .bad{background:rgba(221,93,93,.12);color:var(--bad);border:1px solid var(--bad)}
+  ul{margin:8px 0 0 18px;font-size:13.5px;color:var(--mut)}
+  .cta{display:inline-block;margin-top:12px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:12px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Trademark Opposition Grounds Advisor</h1>
+  <div class="sub">A conflicting mark is in preliminary publication in China. Answer 4 questions to see if you can oppose, on what grounds, and the deadline.</div>
+  <div class="card">
+    <div class="q">1. Is the conflicting mark still within the 3-month publication (opposition) window?</div>
+    <div class="opts" data-k="window"><div class="opt" data-v="yes">Yes, still in window</div><div class="opt" data-v="no">No / not sure</div></div>
+    <div class="q">2. Do you hold an earlier trademark or earlier right (or have used a similar mark with recognition)?</div>
+    <div class="opts" data-k="right"><div class="opt" data-v="reg">Earlier registered/pending mark</div><div class="opt" data-v="use">Used mark with recognition</div><div class="opt" data-v="none">No earlier right</div></div>
+    <div class="q">3. Are the goods/services and the marks similar/confusing?</div>
+    <div class="opts" data-k="sim"><div class="opt" data-v="yes">Yes, likely confusing</div><div class="opt" data-v="no">No / different field</div></div>
+    <div class="q">4. Is there an absolute problem (e.g. deceptive, generic, prohibited signs)?</div>
+    <div class="opts" data-k="abs"><div class="opt" data-v="yes">Yes</div><div class="opt" data-v="no">No</div></div>
+    <div class="result" id="res"></div>
+    <div class="disc">Official opposition fee CNY 450. Foreign opponents must act through a CNIPA-recorded agent. Indication only, not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">File an opposition with us</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+</div>
+<script>
+(function(){
+  var a={};
+  document.querySelectorAll('.opts').forEach(function(g){
+    g.querySelectorAll('.opt').forEach(function(o){
+      o.onclick=function(){g.querySelectorAll('.opt').forEach(function(x){x.classList.remove('on')});o.classList.add('on');a[g.dataset.k]=o.dataset.v;calc();};
+    });
+  });
+  function calc(){
+    if(Object.keys(a).length<4)return;
+    var r=document.getElementById('res'),cls,msg;
+    if(a.window==='no'){cls='bad';msg='Outside the 3-month window you cannot oppose — the mark proceeds to registration. Your route is invalidation (longer, costlier; official fee CNY 675). Act fast next time with a watch.';}
+    else if(a.abs==='yes'){cls='ok';msg='You can oppose on ABSOLUTE grounds — anyone may file these, even without an earlier mark. Gather evidence of the defect and file within the window via a recorded agent.';}
+    else if(a.right==='none'){cls='warn';msg='Without an earlier right or an absolute ground, a relative-ground opposition is weak and normally limited to the prior-right holder. Consider whether you actually have prior use, a copyright or trade-name right.';}
+    else if(a.sim==='yes'){cls='ok';msg='Strong position: oppose on RELATIVE grounds (conflict with your earlier mark/right + likelihood of confusion). File within the 3-month window with your registration/pending number and use evidence; foreign opponents need a CNIPA-recorded agent.';}
+    else {cls='warn';msg='You have an earlier right but the goods/marks differ, so confusion is hard to show. An opposition may still be possible if the marks are identical/well-known; gather evidence before deciding.';}
+    r.className='result '+cls;r.style.display='block';r.textContent=msg;
+  }
+})();
+</script>
+</body>
+</html>
