@@ -19,13 +19,19 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **China vs US vs EU Comparison** | Cost, timeline & rules side by side | [Open](china-us-eu-comparison.html) |
 | **Brand Name Checker** | Distinctiveness / generic-word / length heuristic | [Open](brand-name-checker.html) |
 | **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |
+| **Refusal Response Checklist** | 15-day review window, evidence and response steps | [Open](refusal-response-checklist.html) |
+| **Chinese Name Strategy Helper** | Plan the Chinese-character / pinyin version of a brand | [Open](chinese-name-helper.html) |
+| **Madrid China Fee Calculator** | WIPO fees (CHF 220/110) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
+| **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
+| **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
+| **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
 ### Coming soon
 
-- **Chinese Name Strategy Helper** — plan the Chinese-character / pinyin version of a brand
-- **Madrid China-phase Fee Calculator** — WIPO fees plus CNIPA China-phase requirements
-- **Non-use Cancellation (撤三) Checker** — assess whether a squatter's idle mark is vulnerable
+- **IP Budget Planner** — annual multi-brand / multi-class budget across filing, monitoring and disputes
+- **Copyright Term & Fee Calculator** — protection terms and registration fees by work type
+- **Use-Evidence Checklist Builder** — prepare the new ~5-year use declaration (amended Law, effective 1 Jan 2027)
 
 ## Why
 

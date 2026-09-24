@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Invalidation Grounds Checker — Post-Registration Challenge</title>
+<meta name="description" content="Can you invalidate a registered Chinese trademark? Check your grounds (prior mark, bad-faith squatting, well-known mark, absolute refusals), the 5-year time limit and its exceptions, the CNY 675 fee and process.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/trademark-invalidation-checker.html">
+<style>
+:root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:740px;margin:0 auto;padding:0 20px}
+header{padding:22px 0;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;color:var(--acc);font-size:16px}
+.brand a{color:var(--mut);font-weight:400;font-size:13px;margin-left:8px;text-decoration:none}
+.hero{padding:38px 0 16px}
+.hero h1{font-size:25px;line-height:1.3;margin-bottom:10px}
+.hero p{color:var(--mut);font-size:15px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:13px 0}
+.q p.qtext{font-weight:600;font-size:15px;margin-bottom:10px}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:11px 13px;margin:7px 0;cursor:pointer;font-size:14px;font-family:inherit}
+.opt:hover{border-color:var(--acc)}
+.opt.sel{border-color:var(--acc);background:rgba(212,162,78,.12)}
+.btn{display:block;width:100%;background:var(--acc);color:#1a1408;border:0;padding:14px;border-radius:10px;font-size:16px;font-weight:700;margin-top:14px;cursor:pointer}
+.result{display:none;border-radius:12px;padding:20px;margin-top:18px;border:1px solid var(--line);background:var(--card)}
+.result.show{display:block}
+.result h3{font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.result p{font-size:14.5px;color:var(--mut)}
+.result ul{margin:10px 0 0 18px;font-size:14px;color:var(--mut)}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.r-ok{background:rgba(63,166,110,.1);border-color:var(--ok)}.r-ok .dot{background:var(--ok)}
+.r-warn{background:rgba(224,162,60,.08);border-color:var(--warn)}.r-warn .dot{background:var(--warn)}
+.r-bad{background:rgba(221,93,93,.08);border-color:var(--bad)}.r-bad .dot{background:var(--bad)}
+.cta{margin-top:16px;font-size:14px;color:var(--mut)}.cta a{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:22px 0;margin-top:26px;color:var(--mut);font-size:13px}
+footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Huaqing IP · Invalidation Checker<a href="index.html">← Back to all tools</a></div></div></header>
+
+<div class="hero wrap">
+  <h1>Trademark invalidation grounds checker</h1>
+  <p>Invalidation is the route against a mark that is <strong>already registered</strong> (if it is still in the publication window, use an opposition instead). Answer four questions to see your grounds, whether the 5-year limit blocks you, the official fee and process. Nothing leaves your browser.</p>
+</div>
+
+<div class="wrap">
+  <div class="q"><p class="qtext">1. What is the status of the target mark?</p>
+    <button class="opt" data-q="0" data-v="reg">Already registered</button>
+    <button class="opt" data-q="0" data-v="pub">Still within the publication window</button>
+    <button class="opt" data-q="0" data-v="unsure">Not sure</button>
+  </div>
+  <div class="q"><p class="qtext">2. What is your basis for challenging it? (choose the closest)</p>
+    <button class="opt" data-q="1" data-v="prior">A prior similar trademark / prior right of mine</button>
+    <button class="opt" data-q="1" data-v="badfaith">It was squatting / filed in bad faith (no use intent)</button>
+    <button class="opt" data-q="1" data-v="wellknown">My mark is well-known</button>
+    <button class="opt" data-q="1" data-v="absolute">Absolute problem (generic, descriptive, deceptive, no distinctiveness)</button>
+  </div>
+  <div class="q"><p class="qtext">3. How long since the target's registration date?</p>
+    <button class="opt" data-q="2" data-v="within">Within 5 years</button>
+    <button class="opt" data-q="2" data-v="over">More than 5 years</button>
+  </div>
+  <div class="q"><p class="qtext">4. Are you the prior rights holder or an interested party?</p>
+    <button class="opt" data-q="3" data-v="yes">Yes</button>
+    <button class="opt" data-q="3" data-v="no">No / general member of the public</button>
+  </div>
+
+  <button class="btn" onclick="calc()">Check my invalidation case</button>
+
+  <div id="res" class="result">
+    <h3><span class="dot"></span><span id="resTitle"></span></h3>
+    <div id="resBody"></div>
+  </div>
+
+  <p class="cta">Prefer us to assess and file it? <a href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free call</a> · Related: <a href="opposition-grounds-advisor.html">Opposition grounds advisor</a> · <a href="nonuse-cancellation-checker.html">Non-use cancellation</a></p>
+</div>
+
+<footer><div class="wrap">
+  © 2026 Huaqing Innovation (Huaqing IP / 华青创新) · <a href="https://huaqingip.com">Main site</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+</div></footer>
+
+<script>
+var ans=[null,null,null,null];
+document.querySelectorAll('.opt').forEach(function(b){
+  b.addEventListener('click',function(){
+    var q=b.getAttribute('data-q');
+    document.querySelectorAll('.opt[data-q="'+q+'"]').forEach(function(x){x.classList.remove('sel');});
+    b.classList.add('sel');ans[q]=b.getAttribute('data-v');
+  });
+});
+function calc(){
+  var res=document.getElementById('res');res.className='result show';
+  var t=document.getElementById('resTitle'),b=document.getElementById('resBody');
+  if(ans.some(function(a){return a===null;})){
+    res.classList.add('r-warn');t.textContent='One question left';
+    b.innerHTML='<p>Please answer all four questions.</p>';return;
+  }
+  var status=ans[0],basis=ans[1],age=ans[2],holder=ans[3];
+
+  if(status==='pub'){
+    res.classList.add('r-warn');t.textContent='Use an opposition, not invalidation';
+    b.innerHTML='<p>The mark is still in the publication window — challenge it by <strong>opposition</strong> (current window 3 months; 2 months from 1 Jan 2027 under the amended Law), not invalidation. See the opposition grounds advisor.</p>';return;
+  }
+  // Absolute grounds: anyone, no 5-year limit
+  if(basis==='absolute'){
+    res.classList.add('r-ok');t.textContent='Absolute grounds — no 5-year limit';
+    b.innerHTML='<p>Absolute grounds (generic/descriptive, deceptive, no inherent distinctiveness, or other prohibited cases) can be raised <strong>without the 5-year limit</strong>.</p><ul><li>Official fee: CNY 675 (online) / CNY 750 (paper).</li><li>Filed in Chinese with CNIPA; a foreign applicant needs a recorded agent.</li><li>Decision typically ~9–12 months.</li></ul>';return;
+  }
+  // Bad faith / well-known: not bound by 5 years
+  if(basis==='badfaith'||basis==='wellknown'){
+    res.classList.add('r-ok');t.textContent='Strong grounds — the 5-year limit generally does not bar bad-faith/well-known cases';
+    b.innerHTML='<p>A mark filed in <strong>bad faith</strong> can be challenged beyond five years, and a <strong>well-known mark</strong> owner is likewise not confined by the five-year window for bad-faith squatting. The amended Law (effective 1 Jan 2027) strengthens these rules.</p><ul><li>Official fee: CNY 675 / 750.</li><li>Prepare evidence of your prior reputation and the other side’s bad faith.</li><li>Foreign applicant: a CNIPA-recorded agent must file in Chinese.</li></ul>';return;
+  }
+  // Relative grounds (prior mark/right): 5-year limit
+  if(basis==='prior'){
+    if(age==='within'){
+      res.classList.add('r-ok');t.textContent='Relative grounds appear available (within 5 years)';
+      b.innerHTML='<p>A prior rights holder/interested party can seek invalidation on relative grounds (conflicting prior mark or other prior right) <strong>within five years</strong> of registration, and you appear to be inside that window.</p><ul><li>Official fee: CNY 675 / 750.</li><li>Gather evidence of your prior right and the marks’ similarity.</li><li>Foreign applicant: file through a recorded Chinese agent.</li></ul>';
+    }else{
+      res.classList.add('r-bad');t.textContent='The 5-year limit likely blocks relative grounds';
+      b.innerHTML='<p>Relative-ground invalidation must generally be filed within five years of registration. Beyond that, the route usually fails <strong>unless</strong> you can show bad faith or rely on a well-known mark. If either applies, select that basis instead.</p>';
+    }
+    if(holder==='no'){b.innerHTML+='<p style="margin-top:8px">Note: relative grounds require a prior rights holder/interested party; a member of the public generally cannot bring them.</p>';}
+    return;
+  }
+}
+</script>
+</body>
+</html>
