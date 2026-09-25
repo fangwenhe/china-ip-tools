@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Copyright Term & Registration Fee Calculator (2026)</title>
+<meta name="description" string="true">Free tool: how long copyright lasts in China (lifetime + 50 years for individuals, 50 years after publication for entities) and the China Copyright Protection Center official registration fees by work type, word count and expedited service.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/copyright-term-fee-calculator.html">
+<style>
+:root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:740px;margin:0 auto;padding:0 20px}
+header{padding:22px 0;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;color:var(--acc);font-size:16px}
+.brand a{color:var(--mut);font-weight:400;font-size:13px;margin-left:8px;text-decoration:none}
+.hero{padding:36px 0 14px}
+.hero h1{font-size:24px;line-height:1.3;margin-bottom:10px}
+.hero p{color:var(--mut);font-size:15px}
+h2.sec{font-size:18px;margin:26px 0 6px;padding-top:10px;border-top:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0}
+label{display:block;font-size:13.5px;color:var(--mut);margin:12px 0 5px}
+select,input{width:100%;background:#0d1220;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:11px 12px;font-size:15px;font-family:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.check{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:14px;color:var(--mut)}
+.check input{width:auto}
+.out{background:#0d1220;border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:14px;display:none}
+.out.show{display:block}
+.out b{color:var(--acc);font-size:18px}
+.out p{color:var(--mut);font-size:14px;margin-top:6px}
+.btn{display:block;width:100%;background:var(--acc);color:#1a1408;border:0;padding:13px;border-radius:10px;font-size:15.5px;font-weight:700;margin-top:14px;cursor:pointer}
+.cta{margin-top:16px;font-size:14px;color:var(--mut)}.cta a{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:22px 0;margin-top:26px;color:var(--mut);font-size:13px}
+footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Huaqing IP · Copyright Calculator<a href="index.html">← Back to all tools</a></div></div></header>
+
+<div class="hero wrap">
+  <h1>China copyright term &amp; registration fee calculator</h1>
+  <p>Two quick estimates based on the PRC Copyright Law and the China Copyright Protection Center (CPCC) fee schedule. Nothing leaves your browser.</p>
+</div>
+
+<div class="wrap">
+  <h2 class="sec">A. How long does copyright last in China?</h2>
+  <div class="card">
+    <label>Who owns the copyright?</label>
+    <select id="ownerType" onchange="toggleOwner()">
+      <option value="natural">Natural person (individual author)</option>
+      <option value="entity">Legal entity / employer (work made for hire)</option>
+    </select>
+    <div id="naturalFields">
+      <div class="row">
+        <div><label>Author's birth year</label><input type="number" id="birthYear" placeholder="e.g. 1980"></div>
+        <div><label>Year of death (if deceased; leave blank if living)</label><input type="number" id="deathYear" placeholder="e.g. 2045"></div>
+      </div>
+    </div>
+    <div id="entityFields" style="display:none">
+      <label>Year the work was first published (leave blank if unpublished)</label>
+      <input type="number" id="pubYear" placeholder="e.g. 2018">
+    </div>
+    <button class="btn" onclick="calcTerm()">Calculate term</button>
+    <div class="out" id="termOut"><p id="termText"></p></div>
+  </div>
+
+  <h2 class="sec">B. What does registering the work cost?</h2>
+  <div class="card">
+    <label>Work type</label>
+    <select id="workType" onchange="onWorkType()">
+      <option value="art">Artwork / photograph (美术、摄影)</option>
+      <option value="text">Text / literary work (文字作品)</option>
+      <option value="software">Computer software (软件)</option>
+    </select>
+    <div id="textWords" style="display:none">
+      <label>Word count of the text work</label>
+      <select id="wordBand">
+        <option value="100">100 characters or fewer</option>
+        <option value="150">100 – 5,000 characters</option>
+        <option value="200">5,001 – 10,000 characters</option>
+        <option value="300">More than 10,000 characters</option>
+      </select>
+    </div>
+    <label>Number of works in the series (first work + extras at CNY 100 each)</label>
+    <input type="number" id="seriesCount" value="1" min="1">
+    <label>Speed of processing</label>
+    <select id="expedite">
+      <option value="0">Standard (~60 working days)</option>
+      <option value="fast">Expedited (extra fee)</option>
+    </select>
+    <button class="btn" onclick="calcFee()">Calculate official fee</button>
+    <div class="out" id="feeOut"><p id="feeText"></p></div>
+  </div>
+
+  <p class="cta">We handle China copyright registration for foreign applicants (documents, filing, corrections, certificate). <a href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free call</a> · Related: <a href="copyright-checklist.html">Registration checklist</a></p>
+</div>
+
+<footer><div class="wrap">
+  © 2026 Huaqing Innovation (Huaqing IP / 华青创新) · <a href="https://huaqingip.com">Main site</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+</div></footer>
+
+<script>
+var FX=7.2; // CNY per USD
+function toggleOwner(){
+  var v=document.getElementById('ownerType').value;
+  document.getElementById('naturalFields').style.display=(v==='natural')?'block':'none';
+  document.getElementById('entityFields').style.display=(v==='entity')?'block':'none';
+}
+function calcTerm(){
+  var out=document.getElementById('termOut');out.className='out show';
+  var t=document.getElementById('termText'),v=document.getElementById('ownerType').value;
+  if(v==='natural'){
+    var by=parseInt(document.getElementById('birthYear').value),dy=parseInt(document.getElementById('deathYear').value);
+    if(!by||by<1500||by>2026){t.innerHTML='Please enter a valid author birth year.';return;}
+    if(dy){
+      var until=dy+50;
+      t.innerHTML='For a natural person, economic rights last for the author’s lifetime plus <b>50 years after death</b>, expiring on <b>31 December '+until+'</b>. Moral rights (authorship, integrity) have no time limit.';
+    }else{
+      t.innerHTML='For a living author, protection runs from creation to <b>50 years after the author’s death</b> (expiring 31 December of that 50th year). Joint works use the last surviving author’s death year.';
+    }
+  }else{
+    var py=parseInt(document.getElementById('pubYear').value);
+    if(!py||py<1800||py>2026){t.innerHTML='For an entity / work made for hire, economic rights last <b>50 years after first publication</b>, expiring 31 December of that 50th year. Enter the first-publication year to see the date.';return;}
+    t.innerHTML='For an entity / work made for hire, protection lasts <b>50 years after first publication</b>, expiring on <b>31 December '+(py+50)+'</b> (works unpublished beyond that window may fall under shorter rules).';
+  }
+}
+function onWorkType(){
+  document.getElementById('textWords').style.display=(document.getElementById('workType').value==='text')?'block':'none';
+}
+function calcFee(){
+  var out=document.getElementById('feeOut');out.className='out show';
+  var t=document.getElementById('feeText'),type=document.getElementById('workType').value;
+  var first,extra,exp;
+  if(type==='art'){first=300;extra=100;exp=500;}
+  else if(type==='software'){first=800;extra=100;exp=1000;}
+  else{first=parseInt(document.getElementById('wordBand').value);extra=100;exp=500;}
+  var n=Math.max(1,parseInt(document.getElementById('seriesCount').value)||1);
+  var total=first+(n-1)*extra;
+  if(document.getElementById('expedite').value==='fast'){total+=exp;}
+  var usd=(total/FX).toFixed(0);
+  t.innerHTML='Official CPCC fee ≈ <b>CNY '+total+'</b> (about <b>US$'+usd+'</b>).<p>This is the government/recordal fee only; translation, notarisation/legalisation and agency service are additional. Standard processing is about 60 working days. A registration certificate helps in evidence and online platform disputes, but copyright in China arises automatically on creation.</p>';
+}
+</script>
+</body>
+</html>

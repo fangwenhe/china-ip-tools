@@ -16,6 +16,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Non-Use Cancellation (撤三) Checker** | 3-year exposure + use-evidence checklist | [Open](nonuse-cancellation-checker.html) |
 | **Amazon Brand Registry Eligibility** | Can your CNIPA mark enroll now? | [Open](amazon-brand-registry-checker.html) |
 | **Copyright Registration Checklist** | Materials by work type (art/text/audio/software) | [Open](copyright-checklist.html) |
+| **Copyright Term & Fee Calculator** | Protection term (lifetime+50 / 50 yrs post-publication) + CPCC fees | [Open](copyright-term-fee-calculator.html) |
 | **China vs US vs EU Comparison** | Cost, timeline & rules side by side | [Open](china-us-eu-comparison.html) |
 | **Brand Name Checker** | Distinctiveness / generic-word / length heuristic | [Open](brand-name-checker.html) |
 | **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |
