@@ -25,6 +25,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Madrid China Fee Calculator** | WIPO fees (CHF 220/110) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
+| **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation & 5-year declaration | [Open](trademark-use-evidence-builder.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
