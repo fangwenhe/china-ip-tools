@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madrid China Provisional Refusal Deadline Calculator (15 / 30 Days) | Huaqing IP</title>
+<meta name="description" content="Got a WIPO notification of provisional refusal for your China designation? Enter the date you received it to calculate the 15-day (ex officio) or 30-day (opposition-based) response / review deadline, the 3-month evidence window, and what happens if you miss it.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/madrid-china-refusal-deadline.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d4a24e'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%230f1420'%3EC%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"SoftwareApplication",
+ "name":"Madrid China Provisional Refusal Deadline Calculator",
+ "applicationCategory":"BusinessApplication",
+ "operatingSystem":"Any (browser)",
+ "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
+ "description":"Calculate the response/review deadline (15 or 30 days) and 3-month evidence window for a WIPO provisional refusal affecting a Madrid designation of China.",
+ "url":"https://huaqingip.com/china-ip-tools/madrid-china-refusal-deadline.html"
+}
+</script>
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:780px;margin:0 auto}
+  h1{font-size:22px;margin:0 0 6px}.sub{color:var(--mut);font-size:14px;margin-bottom:20px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}.hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  input[type=date],select{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:14px;width:100%}
+  .row{display:flex;gap:12px;flex-wrap:wrap}
+  .row>div{flex:1;min-width:200px}
+  table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:4px}
+  td{padding:10px 4px;border-bottom:1px solid var(--line)}
+  .d{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .deadline{font-size:18px;font-weight:700}
+  .overdue{color:var(--bad)}.soon{color:var(--warn)}.ok{color:var(--ok)}
+  .box{border-radius:11px;padding:12px 14px;margin-top:12px;font-size:13px}
+  .box.risk{border:1px solid var(--bad);background:rgba(221,93,93,.08)}
+  .box.info{border:1px solid var(--line);background:rgba(39,50,74,.3)}
+  .box h4{margin:0 0 6px;font-size:13.5px}
+  .box ul{margin:6px 0 0;padding-left:18px}.box li{margin:4px 0;font-size:12.5px}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  .disc{font-size:11.5px;color:var(--mut);margin-top:10px}
+  footer{margin-top:18px;font-size:12px;color:var(--mut);text-align:center}
+  footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Madrid → China Provisional Refusal Deadline Calculator</h1>
+  <div class="sub">If WIPO forwarded a <b>provisional refusal</b> that blocks protection of your mark in China, you have only <b>15 days (ex officio)</b> or <b>30 days (opposition-based)</b> to act. Enter the date you actually received the WIPO notification.</div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <label>Date you received the WIPO notification</label>
+        <input type="date" id="recv">
+        <div class="hint">Use the cover-letter date / postmark on the WIPO envelope, not today.</div>
+      </div>
+      <div>
+        <label>Type of provisional refusal</label>
+        <select id="kind">
+          <option value="15" selected>Ex officio refusal (CNIPA rejected on its own grounds) — 15 days</option>
+          <option value="30">Refusal based on an opposition — 30 days</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table>
+      <tr><td>Receipt date</td><td class="d" id="rdate">—</td></tr>
+      <tr><td>Response / review deadline <span class="hint">(+N days)</span></td><td class="d deadline" id="ddl">—</td></tr>
+      <tr><td>Days remaining <span class="hint">(vs today)</span></td><td class="d" id="left">—</td></tr>
+      <tr><td>Additional-evidence window closes <span class="hint">(within 3 months of the review)</span></td><td class="d" id="evid">—</td></tr>
+    </table>
+
+    <div class="box info">
+      <h4>What the deadline means</h4>
+      <ul>
+        <li>Within <b>15 / 30 days</b> you (through a CNIPA-recorded Chinese agent) must either <b>argue overcomes the refusal</b> or file a formal <b>review request (复审)</b>. Simply waiting for the evidence period is not enough.</li>
+        <li>You may then supplement evidence within <b>3 months</b>, but this request must be made inside the initial 15/30-day window.</li>
+        <li>A foreign holder <b>cannot file directly</b> — the response must be submitted by a Chinese trademark agent, in Chinese.</li>
+      </ul>
+    </div>
+
+    <div class="box risk" id="risk" style="display:none">
+      <h4>Missed / nearly missed</h4>
+      <div id="risktext"></div>
+    </div>
+
+    <div class="disc">Limits per WIPO (provisional-refusal time limits to respond, China): ex officio 15 days, opposition-based 30 days, running from receipt of the WIPO notification; up to 3 months for additional evidence. Dates below are calendar-day estimates from your receipt date and must be confirmed against the actual notification — not legal advice.</div>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Get help responding to a China refusal</a>
+    <a class="ghost" href="index.html">← All free tools</a>
+  </div>
+
+  <footer>
+    <a href="https://huaqingip.com">Huaqing IP · CNIPA-recorded trademark agency</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+  </footer>
+</div>
+<script>
+(function(){
+  function $(id){return document.getElementById(id)}
+  function fmt(d){return d.toLocaleDateString('en-US',{year:'numeric',month:'short',day:'numeric'})}
+  function addDays(d,n){var x=new Date(d);x.setDate(x.getDate()+n);return x}
+  function iso(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+  // default: 5 days ago
+  var today=new Date();var def=new Date();def.setDate(def.getDate()-5);
+  $('recv').value=iso(def);
+  function r(){
+    var rec=$('recv').value; if(!rec)return;
+    var recd=new Date(rec+'T00:00:00');
+    var n=+$('kind').value;
+    var ddl=addDays(recd,n);
+    var evid=addDays(recd,n+90);
+    var now=new Date();now.setHours(0,0,0,0);
+    var left=Math.round((ddl-now)/86400000);
+    $('rdate').textContent=fmt(recd);
+    $('ddl').textContent=fmt(ddl);
+    $('ddl').className='d deadline '+(left<0?'overdue':(left<=7?'soon':'ok'));
+    $('left').innerHTML = left<0
+      ? '<span class="overdue">'+Math.abs(left)+' days overdue</span>'
+      : (left<=7 ? '<span class="soon">'+left+' days left</span>' : '<span class="ok">'+left+' days left</span>');
+    $('evid').textContent=fmt(evid);
+    var risk=$('risk'),rt=$('risktext');
+    if(left<0){risk.style.display='';rt.innerHTML='The '+n+'-day window has passed. The China designation is almost certainly refused unless your agent already filed an extension or review — contact them immediately to check what was actually submitted.';}
+    else if(left<=7){risk.style.display='';rt.innerHTML='Only '+left+' days remain. Prepare the arguments and instruct a CNIPA-recorded Chinese agent today; drafting and filing in Chinese takes time.';}
+    else{risk.style.display='none';}
+  }
+  $('recv').addEventListener('change',r);$('kind').addEventListener('change',r);
+  r();
+})();
+</script>
+</body>
+</html>

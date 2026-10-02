@@ -26,6 +26,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
 | **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation & 5-year declaration | [Open](trademark-use-evidence-builder.html) |
+| **Madrid Refusal Deadline Calculator** | WIPO provisional refusal: 15/30-day response & 3-month evidence window | [Open](madrid-china-refusal-deadline.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
