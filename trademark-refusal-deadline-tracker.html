@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Refusal Review Deadline Tracker (15-Day) | Huaqing IP</title>
+<meta name="description" content="Free tool: enter the date you received the CNIPA refusal (office action) to calculate the strict 15-day reexamination deadline, days remaining, weekend/holiday rollover, the 30-day court-appeal deadline and the evidence to prepare. No extension.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/trademark-refusal-deadline-tracker.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:820px;margin:0 auto}
+  h1{font-size:24px;margin:0 0 6px;line-height:1.25}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}
+  label:first-child{margin-top:0}
+  .hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  input[type=date]{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:15px;color-scheme:dark;width:100%;max-width:280px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+  th,td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+  td.d{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+  .warnbox{border:1px solid var(--bad);background:rgba(221,93,93,.09);border-radius:11px;padding:14px 16px;margin-bottom:14px;font-size:13.5px}
+  .warnbox b{color:var(--bad)}
+  .count{display:inline-block;font-size:15px;font-weight:700;padding:3px 10px;border-radius:8px;margin-top:4px}
+  .count.urgent{background:rgba(221,93,93,.15);color:var(--bad)}
+  .count.soon{background:rgba(224,162,60,.15);color:var(--warn)}
+  .count.ok{background:rgba(63,166,110,.15);color:var(--ok)}
+  .count.exp{background:rgba(221,93,93,.2);color:var(--bad)}
+  ul{margin:8px 0 0;padding-left:20px;font-size:13.5px}li{margin:4px 0}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:16px}
+  .hide{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China Trademark Refusal — 15-Day Review Deadline Tracker</h1>
+  <div class="sub">If CNIPA refused your application and did not publish it, you have only <b>15 calendar days from receipt of the notice</b> to apply for reexamination (复审) — the period cannot be extended. Enter the dates below to get your exact deadlines.</div>
+
+  <div class="warnbox">
+    <b>No extension is available.</b> If the 15-day review is not filed on time, the refusal takes effect, the mark is not registered, and your only path is a fresh application (losing your filing date). Act the day you receive the notice.
+  </div>
+
+  <div class="card">
+    <label>Date you received the refusal / office-action notice (驳回通知收到日)
+      <span class="hint">use the actual receipt date; for electronic service use the date shown as served in the CNIPA online system</span>
+    </label>
+    <input type="date" id="refusal">
+
+    <label>Date you received the reexamination decision (复审决定收到日) <span class="hint">(optional — only if you now need the court-appeal deadline)</span></label>
+    <input type="date" id="decision">
+  </div>
+
+  <div id="result" class="card hide">
+    <h3 style="margin:0 0 10px;font-size:16px">Your deadlines</h3>
+    <table>
+      <tr><th>Step</th><th>Deadline</th><th>Time left</th></tr>
+      <tr>
+        <td><b>File reexamination (复审)</b><br><span class="hint">15 calendar days from receipt; day 1 is the day after receipt</span></td>
+        <td class="d" id="reviewDate" style="color:var(--bad)"></td>
+        <td id="reviewCount"></td>
+      </tr>
+      <tr id="appealRow" class="hide">
+        <td><b>Sue at court (行政诉讼)</b><br><span class="hint">30 calendar days from receipt of the reexamination decision</span></td>
+        <td class="d" id="appealDate"></td>
+        <td id="appealCount"></td>
+      </tr>
+    </table>
+    <div id="rolloverNote" class="disc"></div>
+
+    <h3 style="margin:18px 0 4px;font-size:15px">Prepare with the review request</h3>
+    <ul>
+      <li>The refusal (office-action) notice and application number</li>
+      <li>Reexamination application stating the grounds and arguments against the refusal</li>
+      <li>Supporting evidence: distinctiveness acquired through use, sales/advertising figures, market surveys, coexistence, corrected goods items, etc.</li>
+      <li>The trademark image and, if an agent files, a signed Power of Attorney</li>
+      <li>Chinese translations of any foreign-language evidence</li>
+    </ul>
+    <div class="disc">Deadlines are calculated in calendar days. If the last day falls on a Saturday, Sunday or an official Chinese public holiday, the period rolls to the first following working day — always verify against the official State-Council holiday schedule.</div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin:0 0 6px;font-size:15px">How the period is counted</h3>
+    <ul>
+      <li>The day of receipt is <b>not</b> counted; day 1 is the following day, so the 15-day deadline = receipt date + 15 days.</li>
+      <li>Days are <b>calendar days</b> (weekends included), not working days.</li>
+      <li>If the final day is a weekend or statutory holiday, it extends to the next working day.</li>
+      <li>The 15-day review is decided by CNIPA's review board; a further appeal to the Beijing IP Court is within 30 days of that decision.</li>
+    </ul>
+  </div>
+
+  <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Get help filing the review in time</a>
+  <a class="ghost" href="index.html">← All China IP tools</a>
+  <a class="ghost" href="https://huaqingip.com">Main site</a>
+  <div class="disc">Planning tool only, not legal advice; confirm dates against the official notice and the current Trademark Law and Implementing Regulations.</div>
+</div>
+
+<script>
+(function(){
+  var rIn=document.getElementById('refusal'), dIn=document.getElementById('decision');
+  var result=document.getElementById('result');
+
+  function parse(s){if(!s)return null;var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+  function fmt(dt){var d=dt.getDate(),m=dt.getMonth()+1;return dt.getFullYear()+'-'+(m<10?'0':'')+m+'-'+(d<10?'0':'')+d;}
+  function dayName(dt){return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][dt.getDay()];}
+
+  // deadline = base + n days; returns {date, rolled}
+  function deadline(base,n){
+    var dt=new Date(base);dt.setDate(dt.getDate()+n);
+    var rolled=false, note='';
+    if(dt.getDay()===6){dt.setDate(dt.getDate()+2);rolled=true;}
+    else if(dt.getDay()===0){dt.setDate(dt.getDate()+1);rolled=true;}
+    return {date:dt,rolled:rolled};
+  }
+  function countBadge(dt){
+    var today=new Date();today.setHours(0,0,0,0);
+    var diff=Math.round((dt-today)/86400000);
+    var span=document.createElement('span');
+    if(diff<0){span.className='count exp';span.textContent='EXPIRED ('+diff+' days)';}
+    else if(diff===0){span.className='count urgent';span.textContent='Due TODAY';}
+    else if(diff<=5){span.className='count urgent';span.textContent=diff+' days left';}
+    else if(diff<=10){span.className='count soon';span.textContent=diff+' days left';}
+    else {span.className='count ok';span.textContent=diff+' days left';}
+    return span;
+  }
+
+  function run(){
+    var r=parse(rIn.value);
+    if(!r){result.classList.add('hide');return;}
+    result.classList.remove('hide');
+
+    var rev=deadline(r,15);
+    document.getElementById('reviewDate').textContent=fmt(rev.date)+' ('+dayName(rev.date)+')';
+    var rc=document.getElementById('reviewCount');rc.innerHTML='';rc.appendChild(countBadge(rev.date));
+
+    var note=document.getElementById('rolloverNote');
+    note.textContent=rev.rolled ? 'The raw 15th day fell on a weekend, so the deadline rolls to the next working day shown. If that day is an official Chinese public holiday, it rolls further — check the State-Council holiday notice.' : 'If the date shown is an official Chinese public holiday, the deadline rolls to the next working day — check the State-Council holiday notice.';
+
+    var d=parse(dIn.value), row=document.getElementById('appealRow');
+    if(d){
+      row.classList.remove('hide');
+      var ap=deadline(d,30);
+      document.getElementById('appealDate').textContent=fmt(ap.date)+' ('+dayName(ap.date)+')';
+      var ac=document.getElementById('appealCount');ac.innerHTML='';ac.appendChild(countBadge(ap.date));
+    }else{row.classList.add('hide');}
+  }
+  rIn.addEventListener('change',run);dIn.addEventListener('change',run);
+})();
+</script>
+</body>
+</html>
