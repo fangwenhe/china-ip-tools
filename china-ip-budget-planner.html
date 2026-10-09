@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China IP Budget Planner — Estimate Your Trademark Protection Cost | Huaqing IP</title>
+<meta name="description" content="Free tool: estimate your annual China trademark protection budget. Enter brands, classes, Madrid route, renewal and dispute-response items to total CNIPA official fees and agency fees in CNY and USD.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/china-ip-budget-planner.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:24px;margin:0 0 6px;line-height:1.25}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+  h3{margin:0 0 10px;font-size:16px}
+  label{display:block;font-size:13.5px;font-weight:600;margin:14px 0 6px}
+  label:first-child{margin-top:0}
+  .hint{color:var(--mut);font-weight:400;font-size:12px}
+  input[type=number]{width:110px;background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 11px;font-size:15px;color-scheme:dark}
+  select{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:9px 11px;font-size:14px;color-scheme:dark}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:4px}
+  th,td{text-align:left;padding:9px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:11.5px;text-transform:uppercase;letter-spacing:.4px}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+  tr.total td{border-top:2px solid var(--acc);border-bottom:none;font-size:16px;font-weight:700;color:var(--acc)}
+  .row{display:flex;gap:14px;flex-wrap:wrap}
+  .row>div{flex:1;min-width:200px}
+  .note{font-size:12px;color:var(--mut);margin-top:10px}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China IP Budget Planner</h1>
+  <div class="sub">Estimate what a full China trademark-protection program costs in one year: official CNIPA fees plus agency service fees, in CNY and USD. Approximate — actual scope depends on your brands and disputes.</div>
+
+  <div class="card">
+    <h3>1. Filings this year</h3>
+    <div class="row">
+      <div>
+        <label>New marks (word + logo each count as one) <span class="hint">domestic CNIPA route</span></label>
+        <input type="number" id="marks" value="2" min="0">
+      </div>
+      <div>
+        <label>Average classes per mark</label>
+        <input type="number" id="classes" value="2" min="1">
+      </div>
+      <div>
+        <label>Preferred route</label>
+        <select id="route"><option value="cnipa">Direct to CNIPA</option><option value="madrid">Madrid designation of China</option></select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>2. Ongoing / contingency items</h3>
+    <div class="row">
+      <div>
+        <label>Renewals due (10-year) <span class="hint">each</span></label>
+        <input type="number" id="renew" value="0" min="0">
+      </div>
+      <div>
+        <label>Budget for a refusal review <span class="hint">15-day, per case</span></label>
+        <input type="number" id="review" value="0" min="0">
+      </div>
+      <div>
+        <label>Budget for an opposition / invalidation case</label>
+        <input type="number" id="oppose" value="0" min="0">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Estimated annual budget</h3>
+    <table>
+      <tr><th>Item</th><th style="text-align:right">Official fee (CNY)</th><th style="text-align:right">Agency fee (CNY)</th><th style="text-align:right">Total CNY</th></tr>
+      <tbody id="rows"></tbody>
+      <tr class="total"><td>Total per year</td><td class="num" id="totOff">—</td><td class="num" id="totAge">—</td><td class="num" id="totCny">—</td></tr>
+      <tr class="total"><td>In USD (≈ 7.2 CNY/USD)</td><td class="num" colspan="2" style="font-weight:400;color:var(--mut);font-size:13px">official + agency together ≈</td><td class="num" id="totUsd" style="font-size:16px">—</td></tr>
+    </table>
+    <div class="note">Fees are CNIPA online-filing rates (270 CNY/class; renewal 450; refusal review 675; opposition/invalidation 450/675). Madrid designation of China is CHF 220 first class + CHF 110 each extra class. Agency fees use a starting estimate of 300 CNY/class for new filings; dispute items are estimated ranges. This is planning only — confirm scope with us before filing.</div>
+  </div>
+
+  <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Get an exact quote</a>
+  <a class="ghost" href="index.html">← All China IP tools</a>
+  <a class="ghost" href="https://huaqingip.com">Main site</a>
+</div>
+
+<script>
+(function(){
+  var USD=7.2, CHF2CNY=8.2; // CHF approx to CNY
+  function v(id){return parseInt(document.getElementById(id).value)||0;}
+  function fmt(n){return n.toLocaleString('en-US',{maximumFractionDigits:0});}
+
+  function row(label,off,age){
+    var tr=document.createElement('tr');
+    tr.innerHTML='<td>'+label+'</td><td class="num">'+fmt(off)+'</td><td class="num">'+fmt(age)+'</td><td class="num">'+fmt(off+age)+'</td>';
+    return tr;
+  }
+  function run(){
+    var marks=v('marks'), classes=v('classes'), route=document.getElementById('route').value;
+    var renew=v('renew'), review=v('review'), oppose=v('oppose');
+    var off=0, age=0, tbody=document.getElementById('rows');
+    tbody.innerHTML='';
+
+    // Filings
+    if(marks>0){
+      if(route==='madrid'){
+        // per mark: CHF 220 first + 110*(classes-1), convert; no CNIPA per-class agency in this route (WIPO fee)
+        var chf = marks*(220 + Math.max(0,classes-1)*110);
+        var fee = Math.round(chf*CHF2CNY);
+        tbody.appendChild(row('New filings — Madrid designation of China ('+marks+' mark(s), '+classes+' class(es))', fee, marks*600));
+        off+=fee; age+=marks*600;
+      }else{
+        var cls=marks*classes;
+        var fee=cls*270;
+        tbody.appendChild(row('New filings — CNIPA direct ('+cls+' class(es) total)', fee, cls*300));
+        off+=fee; age+=cls*300;
+      }
+    }
+    // Renewals
+    if(renew>0){tbody.appendChild(row('Renewals ('+renew+')', renew*450, renew*300)); off+=renew*450; age+=renew*300;}
+    // Refusal review
+    if(review>0){tbody.appendChild(row('Refusal reviews ('+review+')', review*675, review*1500)); off+=review*675; age+=review*1500;}
+    // Opposition/invalidation
+    if(oppose>0){tbody.appendChild(row('Opposition / invalidation ('+oppose+')', oppose*450, oppose*2500)); off+=oppose*450; age+=oppose*2500;}
+
+    if(marks+renew+review+oppose===0){tbody.innerHTML='<tr><td colspan="4" style="color:var(--mut)">Add items above to see your estimate.</td></tr>';}
+
+    document.getElementById('totOff').textContent='¥'+fmt(off);
+    document.getElementById('totAge').textContent='¥'+fmt(age);
+    document.getElementById('totCny').textContent='¥'+fmt(off+age);
+    document.getElementById('totUsd').textContent='$'+fmt((off+age)/USD);
+  }
+  ['marks','classes','renew','review','oppose'].forEach(function(id){document.getElementById(id).addEventListener('input',run);});
+  document.getElementById('route').addEventListener('change',run);
+  run();
+})();
+</script>
+</body>
+</html>

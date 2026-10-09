@@ -28,6 +28,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation & 5-year declaration | [Open](trademark-use-evidence-builder.html) |
 | **Madrid Refusal Deadline Calculator** | WIPO provisional refusal: 15/30-day response & 3-month evidence window | [Open](madrid-china-refusal-deadline.html) |
 | **Refusal Review Deadline Tracker** | Strict 15-day review deadline, days remaining, weekend/holiday rollover, 30-day court-appeal date | [Open](trademark-refusal-deadline-tracker.html) |
+| **China IP Budget Planner** | Annual program cost: brands × classes, Madrid vs CNIPA, renewals & contingency, CNY + USD | [Open](china-ip-budget-planner.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
