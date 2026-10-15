@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>China Trademark Use-Evidence Checklist Builder (Non-Use Cancellation) | Huaqing IP</title>
-<meta name="description" content="Build a defensible package of trademark-use evidence for China: tick what you have (contracts, invoices, e-commerce records, packaging, ads) and get a completeness score, the strongest missing items, and deadlines for non-use cancellation (3 years) and the new 5-year use declaration under the 2027 Trademark Law.">
+<meta name="description" content="Build a defensible package of trademark-use evidence for China: tick what you have (contracts, invoices, e-commerce records, packaging, ads) and get a completeness score, the strongest missing items, and the deadline for a 3-year non-use cancellation (撤三), including ex officio revocation under the amended Law effective 1 January 2027.">
 <link rel="canonical" href="https://huaqingip.com/china-ip-tools/trademark-use-evidence-builder.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23d4a24e'/%3E%3Ctext x='16' y='23' font-size='20' font-family='Arial' font-weight='bold' text-anchor='middle' fill='%230f1420'%3EC%3C/text%3E%3C/svg%3E">
 <script type="application/ld+json">
@@ -15,7 +15,7 @@
  "applicationCategory":"BusinessApplication",
  "operatingSystem":"Any (browser)",
  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},
- "description":"Interactive builder that scores a trademark owner's use evidence for China non-use cancellation (撤三) and the new 5-year use declaration, and lists the strongest missing evidence.",
+ "description":"Interactive builder that scores a trademark owner's use evidence for a China 3-year non-use cancellation (撤三) and lists the strongest missing evidence; also covers ex officio revocation under the amended Law effective 1 January 2027.",
  "url":"https://huaqingip.com/china-ip-tools/trademark-use-evidence-builder.html"
 }
 </script>
@@ -63,7 +63,7 @@
 <body>
 <div class="wrap">
   <h1>Trademark Use-Evidence Checklist Builder</h1>
-  <div class="sub">China cancels a registered mark if it has <b>not been used for 3 consecutive years</b> (non-use cancellation / 撤三), and the 2027 Trademark Law adds a <b>5-year use declaration</b>. Tick the evidence you already hold to score your file and see the strongest items you are missing.</div>
+  <div class="sub">China can cancel a registered mark if it has <b>not been used for 3 consecutive years without a justified reason</b> (non-use cancellation / 撤三) — and under the amended Law effective 1 January 2027 CNIPA may also revoke such marks on its own initiative. Tick the evidence you already hold to score your file and see the strongest items you are missing.</div>
 
   <div class="card">
     <label class="f">Registration status</label>
@@ -75,7 +75,7 @@
     <select id="years">
       <option value="0">Under 3 years</option>
       <option value="3" selected>3–5 years (3-year cancellation now possible)</option>
-      <option value="5">5 years or more (5-year declaration applies)</option>
+      <option value="5">5 years or more</option>
     </select>
     <label class="f">Have you received a non-use cancellation notice or a request to submit use evidence?</label>
     <select id="notice">
@@ -111,7 +111,7 @@
     <h4 style="font-size:14px;margin:16px 0 2px">Strongest items still missing — prioritise these</h4>
     <div id="miss" class="miss"></div>
 
-    <div class="disc">General guidance based on CNIPA non-use cancellation practice and the Trademark Law as revised in 2026 (in force 1 January 2027). Implementing rules for the 5-year declaration are being issued by CNIPA — confirm the current formalities before filing. This is not legal advice.</div>
+    <div class="disc">General guidance based on CNIPA non-use cancellation practice and the Trademark Law as revised in 2026 (in force 1 January 2027). The final law did not adopt the earlier draft's five-year statement-of-use requirement; the core duty remains maintaining genuine use to defeat a 3-year non-use cancellation (and, under the amended Law, possible ex officio revocation). This is not legal advice.</div>
     <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Prepare the evidence package with us</a>
     <a class="ghost" href="index.html">← All free tools</a>
   </div>
@@ -191,7 +191,7 @@
     if(status==='reg'&&(years==='3'||years==='5')){
       var b2=document.createElement('div');b2.className='box '+(years==='5'?'risk':'warn');
       var extra = years==='5'
-        ? ' At <b>5+ years</b>, the new <b>5-year use declaration</b> under the 2027 law also applies — keep a dated evidence pack ready for the formal declaration (rules being issued by CNIPA).'
+        ? ' At <b>5+ years</b>, the mark is a long-term non-use target; keep a dated, continuous evidence pack and, under the amended Law, be aware CNIPA may also revoke non-used marks on its own initiative.'
         : ' Any third party can now file a non-use cancellation covering the 3-year window.';
       b2.innerHTML='<h4>Your mark is inside the risk window</h4>After <b>3 consecutive years without use</b>, anyone can request cancellation.'+extra;
       rb.appendChild(b2);

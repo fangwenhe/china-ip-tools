@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foreign Applicant China Trademark Filing Materials Checklist | Huaqing IP</title>
+<meta name="description" content="Free interactive checklist of the documents a foreign company or individual needs to file a trademark in China: CNIPA-recorded agent, power of attorney (no notarization), identity documents with Chinese translation, mark specimen, Nice-class goods list, and Paris Convention priority documents.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/foreign-applicant-materials-checklist.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px;line-height:1.28}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+  .alert{border:1px solid var(--warn);background:rgba(224,162,60,.1);color:#f0c988;border-radius:11px;padding:13px 15px;font-size:13.5px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  h3{margin:0 0 10px;font-size:15.5px;color:var(--acc)}
+  h3:first-child{margin-top:0}
+  .q{font-size:13.5px;font-weight:600;margin:14px 0 7px}
+  .q:first-of-type{margin-top:0}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opts label{flex:1;min-width:180px;display:flex;gap:8px;align-items:flex-start;background:#0c111c;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;cursor:pointer;font-weight:400}
+  .opts label.sel{border-color:var(--acc);background:rgba(212,162,78,.08)}
+  .opts input{margin-top:3px}
+  .grp{margin-bottom:14px}
+  .grp h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);margin:16px 0 7px;font-weight:700}
+  label.item{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:9px 0;cursor:pointer}
+  label.item input{margin-top:4px;accent-color:var(--acc)}
+  label.item .why{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:14px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .meta{font-size:13px;color:var(--mut);margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:12px}
+  footer{text-align:center;font-size:12px;color:var(--mut);margin-top:22px}
+  footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Foreign Applicant — China Trademark Filing Materials Checklist</h1>
+  <div class="sub">What a foreign company or individual must actually hand to a CNIPA-recorded agent to file a trademark in China. Answer three questions to build your personal document list, then tick each item as you collect it.</div>
+  <div class="alert">Mandatory rule: a foreign applicant with <b>no habitual residence and no business place in China</b> must entrust a <b>trademark agency established in China</b> (Trademark Law, Art. 18). You cannot file the CNIPA application directly yourself; via the Madrid Protocol you file through your home office.</div>
+
+  <div class="card">
+    <div class="q">1. Who is the applicant?</div>
+    <div class="opts" id="q-applicant">
+      <label><input type="radio" name="applicant" value="company" checked> Foreign company / legal entity</label>
+      <label><input type="radio" name="applicant" value="individual"> Foreign individual / natural person</label>
+    </div>
+    <div class="q">2. Filing route?</div>
+    <div class="opts" id="q-route">
+      <label><input type="radio" name="route" value="direct" checked> Direct CNIPA national application (via a Chinese agent)</label>
+      <label><input type="radio" name="route" value="madrid"> Madrid Protocol — designation of China</label>
+    </div>
+    <div class="q">3. Claim Paris Convention priority from an earlier home-country application?</div>
+    <div class="opts" id="q-priority">
+      <label><input type="radio" name="priority" value="no" checked> No priority</label>
+      <label><input type="radio" name="priority" value="yes"> Yes — claim 6-month priority</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Your document list</h3>
+    <div id="list"></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+  </div>
+
+  <div class="card">
+    <h3>Official fees at filing (CNIPA, per class)</h3>
+    <table>
+      <tr><th>Item</th><th>Online filing</th><th>Paper filing</th></tr>
+      <tr><td>Application — 1 class, up to 10 goods/services items</td><td class="num">CNY 270</td><td class="num">CNY 300</td></tr>
+      <tr><td>Each item beyond 10 in the same class</td><td class="num">CNY 27</td><td class="num">CNY 30</td></tr>
+    </table>
+    <div class="disc">These are government fees only; the Chinese agent's service fee is separate. Use the <a href="trademark-fee-calculator.html" style="color:var(--acc)">Fee Calculator</a> and <a href="china-ip-budget-planner.html" style="color:var(--acc)">Budget Planner</a> for totals.</div>
+  </div>
+
+  <div class="card">
+    <h3>Key rules foreign applicants often get wrong</h3>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Power of attorney — no notarization or legalization.</b>
+      <span class="why">For trademark matters a signed POA is enough; unlike patents or litigation, notarization and consular legalization are not required. A POA issued by a foreigner or foreign enterprise must also state the principal's <b>nationality</b> (Implementing Regulations, Art. 5).</span>
+    </span></label>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Identity documents need a Chinese translation.</b>
+      <span class="why">Foreign companies submit a copy of the certificate of incorporation / business registration; foreign individuals submit a passport or ID copy. The applicant name must match the identity document; the application is processed in Chinese.</span>
+    </span></label>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Mark specimen: one clear drawing, 5–10 cm.</b>
+      <span class="why">Length and width no more than 10 cm and no less than 5 cm; a high-resolution JPG for e-filing. Supply colour and a black-and-white version strategy with the agent.</span>
+    </span></label>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Goods/services must be in Chinese with Nice classes.</b>
+      <span class="why">Use the current Nice Classification (NCL) Chinese list — an over-broad or mistranslated specification causes refusals. Use the <a href="nice-class-picker.html" style="color:var(--acc)">Nice Class Picker</a> for the 45 classes.</span>
+    </span></label>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Priority: 6 months to file, plus 3 months for the certified copy.</b>
+      <span class="why">Claim priority within 6 months of the first filing (Paris Convention / Trademark Law Art. 25; Art. 29 of the amended law effective 1 Jan 2027). The certified copy of the first application, issued by the origin office and showing its date and number, must be supplied within 3 months of the Chinese filing, with a Chinese translation.</span>
+    </span></label>
+    <label class="item"><input type="checkbox" checked><span>
+      <b>Madrid route has different paperwork.</b>
+      <span class="why">Designating China through WIPO needs no Chinese POA or Chinese translation at the international stage; you file through your home office and CNIPA may issue a provisional refusal (respond within the stated deadline, usually 15 days for the Chinese review).</span>
+    </span></label>
+  </div>
+
+  <div class="disc">Planning checklist built from CNIPA rules and the Trademark Law Implementing Regulations; not legal advice. Exact requirements depend on your facts and may change when the amended Trademark Law takes effect on 1 January 2027.</div>
+  <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free 30-min filing review</a>
+  <a class="ghost" href="index.html">← All free tools</a>
+
+  <footer>
+    <a href="https://huaqingip.com">Huaqing IP · CNIPA-recorded trademark agency</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+  </footer>
+</div>
+<script>
+(function(){
+  var DATA={
+    agency:{
+      company:[
+        {t:"Engage a CNIPA-recorded Chinese trademark agency",w:"Foreign companies without a business place in China must file through a Chinese agent (Trademark Law, Art. 18)."},
+        {t:"Signed Power of Attorney for Trademark Matters, stating the company's nationality",w:"No notarization or legalization is required for a trademark POA (Implementing Regulations, Art. 5)."},
+        {t:"Copy of the certificate of incorporation / business registration",w:"The applicant name on the application must match this document exactly."},
+        {t:"Chinese translation of the company name and address",w:"The file is processed in Chinese; the agent prepares the transliteration."}
+      ],
+      individual:[
+        {t:"Engage a CNIPA-recorded Chinese trademark agency",w:"Foreign individuals without habitual residence in China must file through a Chinese agent (Trademark Law, Art. 18)."},
+        {t:"Signed Power of Attorney for Trademark Matters, stating your nationality",w:"No notarization or legalization is required for a trademark POA (Implementing Regulations, Art. 5)."},
+        {t:"Copy of your passport / national ID",w:"The applicant name must match the identity document."},
+        {t:"Chinese transliteration of your name and address",w:"The application is processed in Chinese."}
+      ]
+    },
+    common:[
+      {t:"One clear trademark specimen (5–10 cm, high-resolution JPG for e-filing)",w:"Colour and/or black-and-white version confirmed with the agent."},
+      {t:"Goods/services list in Chinese, mapped to Nice classes",w:"Use the current NCL Chinese list; an over-broad or mistranslated specification draws refusals."},
+      {t:"Chinese-language application form, signed/sealed",w:"Prepared and submitted by the agent via the CNIPA online system."},
+      {t:"Payment of the official fee (CNY 270/class online, 10 items included)",w:"+CNY 27 per additional item in the same class; the agent's service fee is separate."}
+    ],
+    priority:[
+      {t:"File China within 6 months of the first (home) application date",w:"Paris Convention priority window; after it lapses you cannot claim priority."},
+      {t:"Certified copy of the first application from the origin office",w:"Must show the application date and number, certified by that office."},
+      {t:"Chinese translation of the priority document",w:"Submit the certified copy and translation within 3 months of the Chinese filing."}
+    ],
+    madrid:[
+      {t:"File the international application through your home office (WIPO MM2 form)",w:"You cannot send it to WIPO directly; the office of origin certifies it."},
+      {t:"Pay the China individual fee: CHF 220 first class + CHF 110 each additional class",w:"In force since 12 April 2026 (WIPO Notice 9/2026); plus the WIPO basic fee."},
+      {t:"Goods/services list and mark in the MM2 form (English/French accepted)",w:"No Chinese POA or Chinese translation at the international stage."},
+      {t:"Watch for CNIPA's provisional refusal within 18 months",w:"If one issues, respond within the stated deadline (the Chinese review is normally 15 days) via a Chinese agent."}
+    ]
+  };
+  var GROUPS={
+    A:{title:"A. Authorization & applicant identity",items:null},
+    B:{title:"B. Mark, goods & filing",items:null},
+    C:{title:"C. Paris Convention priority",items:null},
+    D:{title:"D. Madrid-specific items",items:null}
+  };
+  var listEl=document.getElementById('list'), bar=document.getElementById('bar'), prog=document.getElementById('prog');
+  function val(name){var r=document.querySelector('input[name='+name+']:checked');return r?r.value:null;}
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function render(){
+    var a=val('applicant'), route=val('route'), pri=val('priority');
+    GROUPS.A.items=route==='madrid'?DATA.madrid.concat([
+      {t:"Copy of the certificate of incorporation (company) or passport (individual)",w:"Held by the office of origin / WIPO; a Chinese agent will need it only if a refusal is issued."}
+    ]) : DATA.agency[a];
+    GROUPS.B.items=route==='madrid'?[] : DATA.common;
+    GROUPS.C.items=(route==='direct'&&pri==='yes')?DATA.priority:[];
+    GROUPS.D.items=[];
+    var html='',total=0;
+    Object.keys(GROUPS).forEach(function(k){
+      var g=GROUPS[k];
+      if(!g.items||!g.items.length)return;
+      html+='<div class="grp"><h4>'+g.title+'</h4>';
+      g.items.forEach(function(it,i){
+        total++;
+        html+='<label class="item"><input type="checkbox" data-g="'+k+'"><span>'+esc(it.t)+'<span class="why">'+esc(it.w)+'</span></span></label>';
+      });
+      html+='</div>';
+    });
+    if(!total)html='<div class="meta">Select your options above.</div>';
+    listEl.innerHTML=html;
+    listEl.querySelectorAll('input').forEach(function(x){x.addEventListener('change',upd);});
+    upd();
+  }
+  function upd(){
+    var all=listEl.querySelectorAll('input'),done=0;
+    all.forEach(function(x){if(x.checked)done++;});
+    var p=all.length?Math.round(done/all.length*100):0;
+    bar.style.width=p+'%';
+    prog.textContent=all.length?('Collected: '+done+' / '+all.length+(done===all.length?' — ready to brief the agent.':'')):'';
+  }
+  document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',render);});
+  render();
+})();
+</script>
+</body>
+</html>

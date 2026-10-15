@@ -25,22 +25,22 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Madrid China Fee Calculator** | WIPO fees (CHF 220/110) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
-| **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation & 5-year declaration | [Open](trademark-use-evidence-builder.html) |
+| **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation (撤三) | [Open](trademark-use-evidence-builder.html) |
 | **Madrid Refusal Deadline Calculator** | WIPO provisional refusal: 15/30-day response & 3-month evidence window | [Open](madrid-china-refusal-deadline.html) |
 | **Refusal Review Deadline Tracker** | Strict 15-day review deadline, days remaining, weekend/holiday rollover, 30-day court-appeal date | [Open](trademark-refusal-deadline-tracker.html) |
 | **China IP Budget Planner** | Annual program cost: brands × classes, Madrid vs CNIPA, renewals & contingency, CNY + USD | [Open](china-ip-budget-planner.html) |
+| **Foreign Applicant Materials Checklist** | Exact documents for a foreign company/individual: CNIPA agent, POA (no notarization), identity + Chinese translation, mark specimen, Nice list, priority copy | [Open](foreign-applicant-materials-checklist.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
 ### Coming soon
 
-- **IP Budget Planner** — annual multi-brand / multi-class budget across filing, monitoring and disputes
-- **Copyright Term & Fee Calculator** — protection terms and registration fees by work type
-- **Use-Evidence Checklist Builder** — prepare the new ~5-year use declaration (amended Law, effective 1 Jan 2027)
+- **Trademark assignment & change-of-name recordal** — fees and documents for 转让 / 变更
+- **Trademark license recordal (许可备案)** — requirements and filing steps
 
 ## Why
 
-China is a **first-to-file** jurisdiction: whoever files first usually owns the mark, regardless of prior overseas use. Official fees are low but total cost (translation, legalization, agency) and short deadlines (3-month opposition, 15-day refusal review) are opaque from abroad. These tools make cost and risk visible before you commit.
+China is a **first-to-file** jurisdiction: whoever files first usually owns the mark, regardless of prior overseas use. Official fees are low but total cost (translation, legalization, agency) and short deadlines (a 2-month publication opposition from 1 January 2027 — 3 months under the current law, and a 15-day refusal review) are opaque from abroad. These tools make cost and risk visible before you commit.
 
 ## Run locally
 
