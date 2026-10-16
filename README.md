@@ -22,7 +22,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |
 | **Refusal Response Checklist** | 15-day review window, evidence and response steps | [Open](refusal-response-checklist.html) |
 | **Chinese Name Strategy Helper** | Plan the Chinese-character / pinyin version of a brand | [Open](chinese-name-helper.html) |
-| **Madrid China Fee Calculator** | WIPO fees (CHF 220/110) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
+| **Madrid China Fee Calculator** | WIPO 2026 fees: application (CHF 220/110) & renewal (441/220) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
 | **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation (撤三) | [Open](trademark-use-evidence-builder.html) |

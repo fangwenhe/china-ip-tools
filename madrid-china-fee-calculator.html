@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madrid Designation of China Fee Calculator (2026 WIPO Rates) | Huaqing IP</title>
-<meta name="description" content="Estimate the WIPO cost of designating China via the Madrid System: basic fee + China individual fee (220 CHF first class, 110 CHF each extra class, from April 2026) + class supplements. Includes the China phase timeline and office-action risk.">
+<meta name="description" content="Estimate the WIPO cost of designating China via the Madrid System: basic fee + China individual fee (220 CHF first class, 110 CHF each extra class) and China renewal individual fee (441/220 CHF), from 12 April 2026. Includes the China phase timeline and office-action risk.">
 <link rel="canonical" href="https://huaqingip.com/china-ip-tools/madrid-china-fee-calculator.html">
 <style>
   :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;}
@@ -33,6 +33,11 @@
   <div class="sub">WIPO Madrid individual fees for China, rates effective <b>12 April 2026</b>. Estimate only; WIPO's own eMadrid calculator governs the final amount.</div>
 
   <div class="card">
+    <label>Transaction</label>
+    <select id="mode">
+      <option value="app" selected>New application / subsequent designation</option>
+      <option value="ren">Renewal</option>
+    </select>
     <label>Mark type</label>
     <select id="kind">
       <option value="653" selected>Black & white (basic fee 653 CHF)</option>
@@ -50,14 +55,14 @@
   <div class="card">
     <table>
       <tr><td>WIPO basic fee</td><td class="d" id="basic">—</td></tr>
-      <tr><td>China individual fee <span class="hint">(220 first class +110 each extra)</span></td><td class="d" id="cnfee">—</td></tr>
+      <tr><td>China individual fee <span class="hint" id="cnHint">(220 first class +110 each extra)</span></td><td class="d" id="cnfee">—</td></tr>
       <tr><td class="muted">Supplemental fee <span class="hint">(classes beyond 3, ~100 CHF each)</span></td><td class="d" id="sup">—</td></tr>
       <tr class="total"><td>Total WIPO fees</td><td class="d big" id="total">—</td></tr>
     </table>
     <div class="warnbox">
-      <b>China phase:</b> after WIPO registers your international mark, CNIPA examines China on substance within ~12–18 months and may issue an office action. Foreign applicants <b>must</b> respond through a CNIPA-recorded agent, in Chinese, within the deadline — otherwise the China designation is refused.
+      <b>China phase:</b> after WIPO registers your international mark, CNIPA examines China on substance within ~12–18 months and may issue an office action. Foreign applicants <b>must</b> respond through a CNIPA-recorded agent, in Chinese, within the deadline — otherwise the China designation is refused. Renewals run every 10 years and face the same China-phase scrutiny.
     </div>
-    <div class="disc">CHF→USD shown at ~1.15. Individual fee for collective marks is 661/331 CHF. Rates source: WIPO Information Notice No. 9/2026. Not legal advice.</div>
+    <div class="disc">CHF→USD shown at ~1.15. New-application individual fee 220/110 CHF; renewal individual fee 441/220 CHF; collective marks 661/331 CHF. Rates source: WIPO Information Notice No. 9/2026 (effective 12 April 2026). Not legal advice.</div>
     <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Handle the China phase with us</a>
     <a class="ghost" href="index.html">← All free tools</a>
   </div>
@@ -66,16 +71,17 @@
 (function(){
   function $(id){return document.getElementById(id)}
   function r(){
-    var basic=+$('kind').value, n=Math.max(1,Math.min(45,+$('cls').value||1)), cn=+$('cn').value;
-    var cnfee = cn ? (220 + 110*(n-1)) : 0;
+    var basic=+$('kind').value, n=Math.max(1,Math.min(45,+$('cls').value||1)), cn=+$('cn').value, ren=$('mode').value==='ren';
+    var cnfee = cn ? (ren ? (441 + 220*(n-1)) : (220 + 110*(n-1))) : 0;
     var sup = n>3 ? (n-3)*100 : 0;
     var total=basic+cnfee+sup;
     $('basic').textContent=basic+' CHF';
+    $('cnHint').textContent = ren ? '(441 first class +220 each extra)' : '(220 first class +110 each extra)';
     $('cnfee').textContent=cnfee?cnfee+' CHF':'—';
     $('sup').textContent=sup?sup+' CHF':'—';
     $('total').textContent=total+' CHF ≈ $'+Math.round(total*1.15);
   }
-  $('kind').addEventListener('change',r);$('cn').addEventListener('change',r);
+  $('mode').addEventListener('change',r);$('kind').addEventListener('change',r);$('cn').addEventListener('change',r);
   $('cMinus').onclick=function(){var v=+$('cls').value;$('cls').value=Math.max(1,v-1);r()};
   $('cPlus').onclick=function(){var v=+$('cls').value;$('cls').value=Math.min(45,v+1);r()};
   $('cls').addEventListener('input',r);
