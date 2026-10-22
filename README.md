@@ -30,6 +30,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Refusal Review Deadline Tracker** | Strict 15-day review deadline, days remaining, weekend/holiday rollover, 30-day court-appeal date | [Open](trademark-refusal-deadline-tracker.html) |
 | **China IP Budget Planner** | Annual program cost: brands × classes, Madrid vs CNIPA, renewals & contingency, CNY + USD | [Open](china-ip-budget-planner.html) |
 | **Foreign Applicant Materials Checklist** | Exact documents for a foreign company/individual: CNIPA agent, POA (no notarization), identity + Chinese translation, mark specimen, Nice list, priority copy | [Open](foreign-applicant-materials-checklist.html) |
+| **China Customs IP Recordal Checker** | GACC border recordal eligibility (free, 10-year validity) + exact document list incl. the foreign-holder China address rule | [Open](customs-recordal-checker.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 

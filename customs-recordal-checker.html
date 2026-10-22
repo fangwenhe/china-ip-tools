@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Customs IP Recordal Checker – Free Eligibility &amp; Materials Checklist | Huaqing IP</title>
+<meta name="description" content="Free interactive checker for China customs IP recordal (海关知识产权保护备案): see if your trademark, copyright or patent qualifies with GACC, what documents you need, how long it lasts (10 years), what it costs (free) and the filing steps.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/customs-recordal-checker.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px;line-height:1.28}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+  .alert{border:1px solid var(--warn);background:rgba(224,162,60,.1);color:#f0c988;border-radius:11px;padding:13px 15px;font-size:13.5px;margin-bottom:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  h3{margin:0 0 10px;font-size:15.5px;color:var(--acc)}
+  h3:first-child{margin-top:0}
+  .q{font-size:13.5px;font-weight:600;margin:14px 0 7px}
+  .q:first-of-type{margin-top:0}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opts label{flex:1;min-width:200px;display:flex;gap:8px;align-items:flex-start;background:#0c111c;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;cursor:pointer;font-weight:400}
+  .opts label.sel{border-color:var(--acc);background:rgba(212,162,78,.08)}
+  .opts input{margin-top:3px}
+  .verdict{border-radius:12px;padding:14px 16px;font-size:14px;margin-top:4px}
+  .verdict.yes{background:rgba(63,166,110,.12);border:1px solid var(--ok);color:#9fdcba}
+  .verdict.no{background:rgba(221,93,93,.12);border:1px solid var(--bad);color:#f0a8a8}
+  .verdict.wait{background:rgba(224,162,60,.1);border:1px solid var(--warn);color:#f0c988}
+  .grp{margin-bottom:14px}
+  .grp h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);margin:16px 0 7px;font-weight:700}
+  label.item{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:9px 0;cursor:pointer}
+  label.item input{margin-top:4px;accent-color:var(--acc)}
+  label.item .why{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:14px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .meta{font-size:13px;color:var(--mut);margin-top:8px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:12px}
+  footer{text-align:center;font-size:12px;color:var(--mut);margin-top:22px}
+  footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China Customs IP Recordal — Eligibility &amp; Materials Checker</h1>
+  <div class="sub">海关知识产权保护备案 — have China Customs automatically detain counterfeits at the border (imports and exports). Recordal is <b>free</b>, valid <b>10 years</b> and takes about a month to set up. Answer four questions to see if your right qualifies and what documents you must prepare.</div>
+  <div class="alert">What recordal does: once your trademark / copyright / patent is recorded with the General Administration of Customs (GACC), customs officers can detain suspected infringing goods at Chinese ports and notify you — for both goods made in China being exported and fakes being imported. The record is <b>valid 10 years</b>, renewable, and <b>free of official charge</b> (Regulations on Customs Protection of IP Rights, Art. 7; GACC IP portal).</div>
+
+  <div class="card">
+    <div class="q">1. What kind of right do you hold?</div>
+    <div class="opts" id="q-type">
+      <label><input type="radio" name="rtype" value="trademark" checked> Trademark</label>
+      <label><input type="radio" name="rtype" value="copyright"> Copyright</label>
+      <label><input type="radio" name="rtype" value="patent"> Patent</label>
+    </div>
+    <div class="q">2. Registration status of that right in China?</div>
+    <div class="opts" id="q-status">
+      <label><input type="radio" name="status" value="registered" checked> Registered in China (certificate issued)</label>
+      <label><input type="radio" name="status" value="pending"> Application pending / not yet granted</label>
+      <label><input type="radio" name="status" value="foreign"> Registered abroad only</label>
+    </div>
+    <div class="q">3. Who is the right holder?</div>
+    <div class="opts" id="q-holder">
+      <label><input type="radio" name="holder" value="foreignco" checked> Foreign company</label>
+      <label><input type="radio" name="holder" value="foreignind"> Foreign individual</label>
+      <label><input type="radio" name="holder" value="cn"> Chinese entity / individual</label>
+    </div>
+    <div class="q">4. Do you have a China-based service address (or a Chinese agent to receive customs notices)?</div>
+    <div class="opts" id="q-addr">
+      <label><input type="radio" name="addr" value="yes" checked> Yes — agent or local address</label>
+      <label><input type="radio" name="addr" value="no"> No</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Your recordal verdict</h3>
+    <div id="verdict"></div>
+  </div>
+
+  <div class="card">
+    <h3>Documents to prepare</h3>
+    <div id="list"></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+  </div>
+
+  <div class="card">
+    <h3>Key facts &amp; official sources</h3>
+    <table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Official fee</td><td>Free (no official charge for recordal)</td></tr>
+      <tr><td>Validity</td><td>10 years, renewable before expiry</td></tr>
+      <tr><td>Setup time</td><td>About 1 month after submission</td></tr>
+      <tr><td>Filing route</td><td>Online via the "Internet + Customs" IP recordal subsystem — register a user account, have it approved, then file the recordal application</td></tr>
+      <tr><td>Foreign holders</td><td>Must provide an address in China for receiving legal documents — a Chinese agent can serve as the contact (this is a common reason applications stall)</td></tr>
+      <tr><td>Legal basis</td><td>Regulations of the PRC on Customs Protection of IP Rights, Art. 7; GACC IPR portal</td></tr>
+    </table>
+    <div class="disc">Sources: <a href="https://online.customs.gov.cn/static/pages/guides/002029002000/002029002000.html" style="color:var(--acc)" target="_blank" rel="noopener">Internet + Customs recordal guide</a> · <a href="http://english.customs.gov.cn/Statics/d95ecac5-4be9-4d69-b71f-c77169e73360.html" style="color:var(--acc)" target="_blank" rel="noopener">GACC IP Protection Regulations (EN)</a>. Recordal is one layer of border enforcement — combine it with platform takedowns and opposition/invalidation for full coverage.</div>
+  </div>
+
+  <div class="disc">Checker built from GACC regulations and the official recordal portal; not legal advice. Exact requirements depend on your facts and the goods you ship.</div>
+  <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free 30-min recordal review</a>
+  <a class="ghost" href="index.html">← All free tools</a>
+
+  <footer>
+    <a href="https://huaqingip.com">Huaqing IP · CNIPA-recorded trademark agency</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+  </footer>
+</div>
+<script>
+(function(){
+  var listEl=document.getElementById('list'), bar=document.getElementById('bar'), prog=document.getElementById('prog'), vd=document.getElementById('verdict');
+  var DOCS={
+    base:{
+      trademark:[
+        {t:"Copy of the Chinese trademark registration certificate",w:"Only a granted registration is recordable — a pending application cannot be recorded with customs."},
+        {t:"Goods and packaging photos showing the mark in use",w:"Customs uses these to match suspected goods at ports; include the product and its packaging."},
+        {t:"List of authorised licensees (if any)",w:"Customs will not withhold legitimate licensed goods, so licences must be declared."}
+      ],
+      copyright:[
+        {t:"Copy of the copyright registration certificate or ownership proof",w:"Works created in China can be voluntarily registered with the China Copyright Protection Center; foreign works rely on ownership evidence plus publication details."},
+        {t:"Specimen of the work (software, artwork, text, etc.)",w:"Sufficient detail for customs officers to compare against suspected goods."},
+        {t:"List of authorised licensees (if any)",w:"Same rule as trademarks — licensed copies must not be detained."}
+      ],
+      patent:[
+        {t:"Copy of the Chinese patent certificate (invention, utility model or design)",w:"Only granted patents are recordable."},
+        {t:"Drawings / photos of the patented product",w:"Clear images help customs identify infringing goods at inspection."},
+        {t:"List of authorised licensees (if any)",w:"Declare licences so legitimate goods are not detained."}
+      ]
+    },
+    holder:{
+      foreignco:[
+        {t:"Certificate of incorporation / business registration of the company",w:"Shows the legal entity name and seat; used to verify the right holder."},
+        {t:"Power of attorney to a China-based agent (if using one)",w:"A Chinese agent can hold the required China service address and handle notices on your behalf."}
+      ],
+      foreignind:[
+        {t:"Copy of passport / identity document",w:"Verifies the individual right holder."},
+        {t:"Power of attorney to a China-based agent (if using one)",w:"An agent provides the China service address and receives customs notices."}
+      ],
+      cn:[
+        {t:"Business licence (company) or ID copy (individual)",w:"Standard identity proof for the recordal account."}
+      ]
+    },
+    status:{
+      pending:[
+        {t:"Wait for the right to be granted before recordal",w:"Customs recordal requires a granted right. File your application now; record with customs once the certificate issues (about 6–9 months for trademarks)."}
+      ],
+      foreign:[
+        {t:"Register the right in China first",w:"A foreign registration alone is not recordable with GACC — customs protection follows the Chinese registration. File the Chinese application now; record with customs after grant."}
+      ]
+    },
+    addr:{
+      no:[
+        {t:"Appoint a China-based contact / agent to receive customs notices",w:"Foreign right holders must give an address in China for service of legal documents. A Chinese agency can act as the designated contact — without it, the application cannot be completed."}
+      ]
+    }
+  };
+  var GROUPS={A:{title:"A. Core right documents",items:null},B:{title:"B. Right holder identity",items:null},C:{title:"C. Watch-outs for your situation",items:null}};
+  function val(name){var r=document.querySelector('input[name='+name+']:checked');return r?r.value:null;}
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function render(){
+    var t=val('rtype'), s=val('status'), h=val('holder'), a=val('addr');
+    var ok=(s==='registered'&&a==='yes');
+    var html='';
+    if(ok){html='<div class="verdict yes"><b>Eligible to record.</b> Your granted '+t+' right qualifies for GACC recordal. Prepare the documents below, then file online via the Internet + Customs IP subsystem (register an account, get it approved, submit the recordal application). Budget about 1 month.</div>';}
+    else if(s!=='registered'){html='<div class="verdict wait"><b>Not recordable yet.</b> Customs recordal requires a <b>granted</b> right in China — your application is '+((s==='pending')?'still pending':'registered abroad only')+'. File / keep the Chinese application moving now, and record with customs after the certificate issues. See the watch-outs below.</div>';}
+    else{html='<div class="verdict no"><b>Almost eligible — missing a China service address.</b> Your right is granted, but foreign holders must provide an address in China to receive customs notices. Appoint a Chinese agent as your contact, then record.</div>';}
+    vd.innerHTML=html;
+    GROUPS.A.items=DOCS.base[t];
+    GROUPS.B.items=DOCS.holder[h];
+    GROUPS.C.items=[];
+    if(s!=='registered')GROUPS.C.items=GROUPS.C.items.concat(DOCS.status[s]);
+    if(a==='no')GROUPS.C.items=GROUPS.C.items.concat(DOCS.addr.no);
+    var out='',total=0;
+    Object.keys(GROUPS).forEach(function(k){
+      var g=GROUPS[k];
+      if(!g.items||!g.items.length)return;
+      out+='<div class="grp"><h4>'+g.title+'</h4>';
+      g.items.forEach(function(it){
+        total++;
+        out+='<label class="item"><input type="checkbox"><span>'+esc(it.t)+'<span class="why">'+esc(it.w)+'</span></span></label>';
+      });
+      out+='</div>';
+    });
+    if(!total)out='<div class="meta">Select your options above.</div>';
+    listEl.innerHTML=out;
+    listEl.querySelectorAll('input').forEach(function(x){x.addEventListener('change',upd);});
+    upd();
+  }
+  function upd(){
+    var all=listEl.querySelectorAll('input'),done=0;
+    all.forEach(function(x){if(x.checked)done++;});
+    var p=all.length?Math.round(done/all.length*100):0;
+    bar.style.width=p+'%';
+    prog.textContent=all.length?('Collected: '+done+' / '+all.length+(done===all.length?' — ready to brief your agent.':'')):'';
+  }
+  document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',render);});
+  render();
+})();
+</script>
+</body>
+</html>
