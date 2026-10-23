@@ -31,13 +31,14 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **China IP Budget Planner** | Annual program cost: brands × classes, Madrid vs CNIPA, renewals & contingency, CNY + USD | [Open](china-ip-budget-planner.html) |
 | **Foreign Applicant Materials Checklist** | Exact documents for a foreign company/individual: CNIPA agent, POA (no notarization), identity + Chinese translation, mark specimen, Nice list, priority copy | [Open](foreign-applicant-materials-checklist.html) |
 | **China Customs IP Recordal Checker** | GACC border recordal eligibility (free, 10-year validity) + exact document list incl. the foreign-holder China address rule | [Open](customs-recordal-checker.html) |
+| **China Trademark Assignment &amp; License Recordal Checker** | Transfer (转让) / licence (许可备案) CNIPA fees (CNY 450/135 per class online), documents &amp; same-mark transfer rule | [Open](trademark-assignment-checker.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
 ### Coming soon
 
-- **Trademark assignment & change-of-name recordal** — fees and documents for 转让 / 变更
-- **Trademark license recordal (许可备案)** — requirements and filing steps
+- **Trademark pledge (质押) registration** — fees and documents for 商标质押
+- **Trademark cancellation grounds advisor** — voluntary surrender vs 撤三 vs invalidation paths
 
 ## Why
 

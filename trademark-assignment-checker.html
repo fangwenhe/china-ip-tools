@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Assignment &amp; License Recordal Checker – Fees &amp; Documents | Huaqing IP</title>
+<meta name="description" content="Free interactive checker for transferring (转让) or licensing (许可备案) a China trademark: exact CNIPA official fees (CNY 450/class online for assignment, 135/class for license recordal), required documents, the same-mark transfer rule and the filing steps.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/trademark-assignment-checker.html">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:860px;margin:0 auto}
+  h1{font-size:23px;margin:0 0 6px;line-height:1.28}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  h3{margin:0 0 10px;font-size:15.5px;color:var(--acc)}
+  h3:first-child{margin-top:0}
+  .q{font-size:13.5px;font-weight:600;margin:14px 0 7px}
+  .q:first-of-type{margin-top:0}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opts label{flex:1;min-width:190px;display:flex;gap:8px;align-items:flex-start;background:#0c111c;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px;cursor:pointer;font-weight:400}
+  .opts label.sel{border-color:var(--acc);background:rgba(212,162,78,.08)}
+  .opts input{margin-top:3px}
+  .numrow{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+  .numrow label{flex:1;min-width:130px}
+  .numrow input[type=number]{width:100%;margin-top:4px;background:#0c111c;border:1px solid var(--line);border-radius:8px;color:var(--txt);padding:9px 11px;font-size:15px}
+  .fee{background:rgba(212,162,78,.1);border:1px solid var(--acc);border-radius:12px;padding:14px 16px;margin-top:4px;font-size:14.5px}
+  .fee b{color:var(--acc);font-size:18px}
+  .fee .row{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dashed var(--line)}
+  .fee .row:last-child{border-bottom:none}
+  .fee .row span{color:var(--mut);font-size:13px}
+  .grp{margin-bottom:14px}
+  .grp h4{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--mut);margin:16px 0 7px;font-weight:700}
+  label.item{display:flex;gap:10px;align-items:flex-start;font-size:14px;margin:9px 0;cursor:pointer}
+  label.item input{margin-top:4px;accent-color:var(--acc)}
+  label.item .why{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+  .bar{height:8px;background:#0c111c;border-radius:99px;overflow:hidden;margin-top:14px}
+  .bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .2s}
+  .meta{font-size:13px;color:var(--mut);margin-top:8px}
+  .rule{border-left:3px solid var(--warn);background:rgba(224,162,60,.08);border-radius:0 10px 10px 0;padding:11px 14px;font-size:13.5px;margin:10px 0;color:#f0c988}
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:12px}
+  footer{text-align:center;font-size:12px;color:var(--mut);margin-top:22px}
+  footer a{color:var(--acc);text-decoration:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>China Trademark Assignment &amp; License Recordal Checker</h1>
+  <div class="sub">商标转让与许可备案 — transfer a registered China trademark to a buyer or record a licence for a distributor / platform seller. This checker shows the exact CNIPA official fees, the documents both sides must prepare, and the traps (same-mark transfer rule, foreign-party agent requirement) that stall deals.</div>
+
+  <div class="card">
+    <div class="q">What do you need to record with CNIPA?</div>
+    <div class="opts" id="q-mode">
+      <label><input type="radio" name="mode" value="assign" checked> Assignment — transfer ownership (转让)</label>
+      <label><input type="radio" name="mode" value="license"> License recordal — authorise use (许可备案)</label>
+    </div>
+    <div class="q">How many Nice classes does the trademark cover?</div>
+    <div class="numrow">
+      <label>Classes
+        <input type="number" id="classes" min="1" max="45" value="1">
+      </label>
+      <label>Marks (e.g. word + logo versions)
+        <input type="number" id="marks" min="1" max="20" value="1">
+      </label>
+    </div>
+    <div class="q">Filing route?</div>
+    <div class="opts" id="q-route">
+      <label><input type="radio" name="route" value="e" checked> Online e-filing via agent</label>
+      <label><input type="radio" name="route" value="paper"> Paper application</label>
+    </div>
+    <div class="q">Is either party a foreign company or individual without a China address?</div>
+    <div class="opts" id="q-foreign">
+      <label><input type="radio" name="foreign" value="yes" checked> Yes — foreign party involved</label>
+      <label><input type="radio" name="foreign" value="no"> No — all parties are China-based</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>CNIPA official fee</h3>
+    <div id="fee"></div>
+    <div id="docset"></div>
+    <div id="rules"></div>
+    <div class="bar"><i id="bar"></i></div>
+    <div class="meta" id="prog"></div>
+  </div>
+
+  <div class="card">
+    <h3>Key facts &amp; official sources</h3>
+    <table>
+      <tr><th>Item</th><th>Detail</th></tr>
+      <tr><td>Assignment fee</td><td>CNY 450 per class (e-filing) / CNY 500 per class (paper) — per trademark</td></tr>
+      <tr><td>License recordal fee</td><td>CNY 135 per class (e-filing) / CNY 150 per class (paper)</td></tr>
+      <tr><td>Effective date</td><td>An assignment takes effect only from the date CNIPA registers it (Trademark Law Art. 42) — the buyer is not the owner until then</td></tr>
+      <tr><td>Same-mark rule</td><td>The assignor must transfer identical or similar marks registered for the same goods in one go (Art. 42) — selling one mark while keeping a similar one is not allowed</td></tr>
+      <tr><td>Licence filing</td><td>Licensing a mark should be filed with CNIPA for the record (Art. 43); until recorded, it is less effective against third parties</td></tr>
+      <tr><td>Foreign parties</td><td>Foreign companies / individuals must act through a CNIPA-recorded Chinese agency and provide a China service address</td></tr>
+    </table>
+    <div class="disc">Sources: <a href="https://sbj.cnipa.gov.cn/shbjfzn/index.html" style="color:var(--acc)" target="_blank" rel="noopener">CNIPA Trademark Office fee guide (2026-10-09)</a> · <a href="https://english.cnipa.gov.cn/col/col3005/index.html" style="color:var(--acc)" target="_blank" rel="noopener">CNIPA official fees (EN)</a>. Official fees are current as of October 2026; confirm at filing time.</div>
+  </div>
+
+  <div class="disc">Checker built from CNIPA fee publications and the Trademark Law; not legal advice. Deals involving goodwill, pledges or disputes need a lawyer's review.</div>
+  <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free 30-min recordal review</a>
+  <a class="ghost" href="index.html">← All free tools</a>
+
+  <footer>
+    <a href="https://huaqingip.com">Huaqing IP · CNIPA-recorded trademark agency</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+  </footer>
+</div>
+<script>
+(function(){
+  var feeEl=document.getElementById('fee'), docEl=document.getElementById('docset'), rulEl=document.getElementById('rules'),
+      bar=document.getElementById('bar'), prog=document.getElementById('prog');
+  var DOCS={
+    assign:{
+      base:[
+        {t:"Trademark registration certificate (or electronic certificate) of the mark being transferred",w:"Proof of the registered right being assigned."},
+        {t:"Signed assignment agreement (转让协议) between assignor and assignee",w:"CNIPA does not provide a mandatory form; a contract covering price, goods/classes, goodwill and effective date is standard."},
+        {t:"Identity / business licence of both the assignor and the assignee",w:"China-based company: business licence; individual: ID. Foreign party: see the foreign box below."},
+        {t:"Application for assignment filed jointly (转让申请) by both parties",w:"Assignment must be a joint application — CNIPA will not accept a unilateral request."}
+      ],
+      foreign:[
+        {t:"Power of attorney appointing a CNIPA-recorded Chinese agent",w:"Any foreign party without a China address must use a CNIPA-recorded agency (Trademark Law Art. 18); the POA needs no notarisation for standard filings."},
+        {t:"Chinese translation of foreign company registration / ID documents",w:"Foreign documents must be translated; the agent prepares the official translation."}
+      ]
+    },
+    license:{
+      base:[
+        {t:"Trademark registration certificate of the licensed mark",w:"Confirms the licensor holds the right being licensed."},
+        {t:"Signed trademark licence agreement (商标使用许可合同)",w:"Should state the classes, territory (mainland China), duration, royalties and whether the licence is exclusive or non-exclusive."},
+        {t:"Identity / business licence of the licensor and the licensee",w:"Both sides' proof of legal status."},
+        {t:"License recordal application (商标使用许可备案申请)",w:"Filed by the licensor (or via its agent); the record covers one licence contract."}
+      ],
+      foreign:[
+        {t:"Power of attorney + CNIPA-recorded Chinese agent (if the licensor is foreign)",w:"A foreign licensor needs a CNIPA-recorded agency; a China-based licensee is not a substitute for the licensor's agent requirement."},
+        {t:"Chinese translation of foreign company documents",w:"As with assignment, foreign documents need certified-style translations prepared by the agent."}
+      ]
+    }
+  };
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+  function val(name){var r=document.querySelector('input[name='+name+']:checked');return r?r.value:null;}
+  function render(){
+    var mode=val('mode'), route=val('route'), foreign=val('foreign');
+    var cls=Math.max(1,parseInt(document.getElementById('classes').value||'1',10));
+    var marks=Math.max(1,parseInt(document.getElementById('marks').value||'1',10));
+    var feePer=0, feeName='', feeNote='';
+    if(mode==='assign'){feePer=route==='e'?450:500;feeName='CNIPA assignment fee (受理转让注册商标费)';feeNote='CNY 450/class e-filing, CNY 500/class paper (per mark)';}
+    else{feePer=route==='e'?135:150;feeName='CNIPA licence recordal fee (商标使用许可合同备案费)';feeNote='CNY 135/class e-filing, CNY 150/class paper';}
+    var total=feePer*cls*marks;
+    var html='<div class="fee"><div class="row"><span>'+feeName+'</span><span>CNY '+feePer+' × '+cls+' class'+(cls>1?'es':'')+' × '+marks+' mark'+(marks>1?'s':'')+'</span></div>'
+      +'<div class="row"><b>CNY '+total.toLocaleString('en-US')+'</b><span>'+feeNote+'</span></div>'
+      +'</div>';
+    feeEl.innerHTML=html;
+    var grps=[{title:'A. Core documents',items:DOCS[mode].base}];
+    if(foreign==='yes')grps.push({title:'B. Foreign-party requirements',items:DOCS[mode].foreign});
+    var out='';
+    grps.forEach(function(g){
+      out+='<div class="grp"><h4>'+g.title+'</h4>';
+      g.items.forEach(function(it){
+        out+='<label class="item"><input type="checkbox"><span>'+esc(it.t)+'<span class="why">'+esc(it.w)+'</span></span></label>';
+      });
+      out+='</div>';
+    });
+    docEl.innerHTML=out;
+    var rules='';
+    if(mode==='assign'){
+      rules+='<div class="rule"><b>Same-mark transfer rule (Art. 42):</b> the assignor must transfer, together with the mark, all identical or similar marks registered for the same goods. If the seller keeps a similar mark for the same class, CNIPA will refuse the assignment. Check the full portfolio before signing.</div>';
+      rules+='<div class="rule"><b>Effective on registration:</b> the buyer only becomes the owner when CNIPA approves and registers the transfer — a signed contract alone is not enough. Budget about 2–6 months and keep using the mark meanwhile to avoid a 撤三 (non-use) attack.</div>';
+    }else{
+      rules+='<div class="rule"><b>Record before you rely on it:</b> licensing takes effect between the parties by contract, but the recordal (Art. 43) protects against third parties — e.g. an earlier licensee or a later buyer of the mark. File the recordal promptly after signing.</div>';
+      rules+='<div class="rule"><b>Exclusive vs non-exclusive:</b> state it in the contract. Only an exclusive licence can be used by the licensee to file infringement actions in their own name.</div>';
+    }
+    rulEl.innerHTML=rules;
+    var all=docEl.querySelectorAll('input'),done=0;
+    all.forEach(function(x){x.addEventListener('change',upd);});
+    upd();
+  }
+  function upd(){
+    var all=docEl.querySelectorAll('input'),done=0;
+    all.forEach(function(x){if(x.checked)done++;});
+    var p=all.length?Math.round(done/all.length*100):0;
+    bar.style.width=p+'%';
+    prog.textContent=all.length?('Collected: '+done+' / '+all.length+(done===all.length?' — ready to instruct your agent.':'')):'';
+  }
+  document.querySelectorAll('input[type=radio]').forEach(function(r){r.addEventListener('change',render);});
+  ['classes','marks'].forEach(function(id){document.getElementById(id).addEventListener('input',render);});
+  render();
+})();
+</script>
+</body>
+</html>
