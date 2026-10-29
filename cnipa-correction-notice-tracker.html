@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CNIPA Correction Notice (补正通知) 30-Day Response Tracker | Huaqing IP</title>
+<meta name="description" content="Free tool: enter the date you received CNIPA's correction notice (补正通知) to calculate the strict 30-day deadline to fix your trademark application, days remaining, and what happens if you miss it. Distinguish correction 30 days vs refusal review 15 days vs cancellation defense 2 months.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/cnipa-correction-notice-tracker.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"CNIPA Correction Notice 30-Day Response Tracker","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://huaqingip.com/china-ip-tools/cnipa-correction-notice-tracker.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"description":"Calculate the 30-day deadline to respond to a CNIPA trademark correction notice, with a side-by-side table of the four common CNIPA response windows."}
+</script>
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:24px 14px 60px}
+  .wrap{max-width:820px;margin:0 auto}
+  h1{font-size:24px;margin:0 0 6px;line-height:1.25}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:22px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:14px}
+  label{display:block;font-size:14px;font-weight:600;margin:12px 0 6px}
+  label:first-child{margin-top:0}
+  .hint{color:var(--mut);font-weight:400;font-size:12.5px}
+  input[type=date]{background:#0c111c;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-size:15px;color-scheme:dark;width:100%;max-width:280px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
+  th,td{text-align:left;padding:10px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--mut);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+  td.d{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+  .warnbox{border:1px solid var(--warn);background:rgba(224,162,60,.09);border-radius:11px;padding:14px 16px;margin-bottom:14px;font-size:13.5px}
+  .warnbox b{color:var(--warn)}
+  .deadline{font-size:30px;font-weight:800;color:var(--acc);margin:6px 0 2px;letter-spacing:-.01em}
+  .count{display:inline-block;font-size:14px;font-weight:700;padding:4px 12px;border-radius:8px;margin-top:6px}
+  .count.urgent{background:rgba(221,93,93,.15);color:var(--bad)}
+  .count.soon{background:rgba(224,162,60,.15);color:var(--warn)}
+  .count.ok{background:rgba(63,166,110,.15);color:var(--ok)}
+  .count.exp{background:rgba(221,93,93,.2);color:var(--bad)}
+  ul{margin:8px 0 0;padding-left:20px;font-size:13.5px}li{margin:4px 0}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:700;padding:11px 18px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 16px;border-radius:9px;font-size:13px}
+  .disc{font-size:12px;color:var(--mut);margin-top:16px}
+  .result{display:none}
+  .result.show{display:block}
+  @media(max-width:520px){.deadline{font-size:22px}table{font-size:12.5px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>CNIPA Correction Notice (补正通知) — 30-Day Response Tracker</h1>
+  <div class="sub">When your trademark application has a <b>formal / paperwork defect</b> (missing signature, wrong class number, unclear goods list), CNIPA sends a <b>Correction Notice (补正通知)</b>, not a refusal. You have <b>30 calendar days from receipt</b> to fix and resubmit — no official fee, but if you miss it the application is refused outright. Enter the receipt date below.</div>
+
+  <div class="warnbox">
+    <b>Do not confuse this with a refusal review.</b> A correction notice is a <i>paperwork</i> fix: 30 days, no fee, and your filing date is preserved if you fix on time. A refusal (驳回通知) is a <i>substantive</i> rejection: only 15 days, CNY 675/750 review fee, and missing it means the mark is dead. Read the notice's Chinese title carefully before you act.
+  </div>
+
+  <div class="card">
+    <label>Date you / your Chinese agent actually received the correction notice (补正通知收到日)
+      <span class="hint">for electronic service, use the date shown as served in the CNIPA online system — not the date the notice was generated</span>
+    </label>
+    <input type="date" id="recv">
+    <div style="margin-top:14px">
+      <a class="cta" href="javascript:calc()">Calculate my deadline</a>
+    </div>
+
+    <div id="res" class="result" style="margin-top:18px">
+      <div style="font-size:13px;color:var(--mut)">Last day to file the correction (补正提交截止日)</div>
+      <div class="deadline" id="ddl">—</div>
+      <span id="badge" class="count ok"></span>
+      <div id="msg" style="font-size:14px;color:var(--mut);margin-top:8px"></div>
+
+      <div style="margin-top:18px">
+        <table>
+          <tr><th style="width:38%">What this is</th><th>Detail</th></tr>
+          <tr><td>Type of notice</td><td>Formal / paperwork defect (形式补正) — not a substantive refusal</td></tr>
+          <tr><td>Response window</td><td class="d">30 calendar days from receipt</td></tr>
+          <tr><td>Official fee</td><td>CNY 0 (no fee for correction)</td></tr>
+          <tr><td>Filing date if fixed on time</td><td>Preserved (your original application date stays)</td></tr>
+          <tr><td>If you miss it</td><td>CNIPA refuses the application outright — you must refile and lose your original filing date</td></tr>
+          <tr><td>Who must file</td><td>A CNIPA-recorded Chinese agent, in Chinese</td></tr>
+        </table>
+      </div>
+
+      <div class="warnbox" style="margin-top:14px">
+        <b>Common correction reasons CNIPA lists:</b>
+        <ul>
+          <li>Goods/services list too broad or unclear (e.g. "software" without a precise description)</li>
+          <li>Applicant name / address mismatch between the application and the supporting document</li>
+          <li>Missing or incorrect priority claim</li>
+          <li>Power of attorney not dated or signed within the valid window</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <b style="font-size:15px">The four CNIPA windows foreign applicants mix up most often</b>
+    <table>
+      <tr><th>Notice type</th><th>Window</th><th>Fee</th><th>What if you miss it</th></tr>
+      <tr><td><b>Correction notice</b> (补正通知)</td><td class="d">30 days</td><td>Free</td><td>Application refused; lose filing date</td></tr>
+      <tr><td>Refusal review (驳回复审)</td><td class="d">15 days</td><td>CNY 675 / 750</td><td>Refusal becomes final; mark dead</td></tr>
+      <tr><td>Non-use cancellation defense (撤三答辩)</td><td class="d">2 months</td><td>Free</td><td>Registration cancelled</td></tr>
+      <tr><td>Opposition defense (异议答辩)</td><td class="d">30 days</td><td>Free</td><td>Registration likely refused</td></tr>
+    </table>
+  </div>
+
+  <p style="font-size:14px;color:var(--mut)">
+    Need a Chinese agent to read the notice and draft the correction within the window?
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener" style="font-size:13px;padding:9px 14px">Book free 30-min call</a>
+    <a class="ghost" href="trademark-refusal-deadline-tracker.html">Refusal 15-day tracker</a>
+    <a class="ghost" href="index.html">All tools</a>
+  </p>
+
+  <div class="disc">
+    © 2026 Huaqing Innovation (Huaqing IP / 华青创新) · CNIPA-recorded trademark agency ·
+    <a href="https://huaqingip.com" style="color:var(--acc)">Main site</a> ·
+    <a href="mailto:ip@huaqingip.com" style="color:var(--acc)">ip@huaqingip.com</a><br>
+    Planning aid only — not legal advice. The 30-day window follows Article 18 of the PRC Trademark Law Implementing Regulations; if the last day falls on a Chinese public holiday, it rolls to the next working day — confirm with your agent.
+  </div>
+</div>
+
+<script>
+document.getElementById('recv').value = new Date().toISOString().slice(0,10);
+function calc(){
+  var v = document.getElementById('recv').value;
+  if(!v){alert('Pick the date you received the notice.');return}
+  var recv = new Date(v+'T00:00:00');
+  var ddl = new Date(recv); ddl.setDate(ddl.getDate()+30);
+  var now = new Date(); now.setHours(0,0,0,0);
+  var days = Math.round((ddl-now)/86400000);
+  document.getElementById('ddl').textContent = ddl.toLocaleDateString('en-GB',{weekday:'long',year:'numeric',month:'long',day:'numeric'});
+  var b = document.getElementById('badge'), m = document.getElementById('msg');
+  if(days<0){b.className='count exp';b.textContent='Window closed';m.textContent='The 30-day correction window has passed. The application is at risk of being refused — contact your agent immediately to assess whether a last-minute fix is still accepted.'}
+  else if(days===0){b.className='count urgent';b.textContent='Last day today';m.textContent='File the correction today. Chinese agents can usually submit within hours if you have the documents ready.'}
+  else if(days<=7){b.className='count urgent';b.textContent=days+' days left — urgent';m.textContent='Very tight. Brief your Chinese agent today; most corrections need a redrafted goods list or signed POA, which takes 2-3 days.'}
+  else if(days<=15){b.className='count soon';b.textContent=days+' days left';m.textContent='Workable. Send the notice to your Chinese agent this week so they can draft and file before the deadline.'}
+  else{b.className='count ok';b.textContent=days+' days left';m.textContent='There is still time, but do not wait — Chinese New Year and Golden Week holidays can eat into the window unexpectedly.'}
+  document.getElementById('res').classList.add('show');
+  document.getElementById('res').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+</script>
+</body>
+</html>
