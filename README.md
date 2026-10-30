@@ -33,6 +33,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **China Customs IP Recordal Checker** | GACC border recordal eligibility (free, 10-year validity) + exact document list incl. the foreign-holder China address rule | [Open](customs-recordal-checker.html) |
 | **China Trademark Assignment &amp; License Recordal Checker** | Transfer (转让) / licence (许可备案) CNIPA fees (CNY 450/135 per class online), documents &amp; same-mark transfer rule | [Open](trademark-assignment-checker.html) |
 | **CNIPA Correction Notice (补正通知) 30-Day Tracker** | Paperwork-defect notice response deadline (30 days, free), side-by-side comparison with 15-day refusal review, 2-month cancellation defense and 30-day opposition defense | [Open](cnipa-correction-notice-tracker.html) |
+| **Paris Convention Priority Deadline Calculator** | 6-month window to claim an earlier home-country filing date in China, plus the 3-month window to file the certified copy; flags the two traps (on-form declaration and certified copy) that wipe priority out | [Open](priority-claim-calculator.html) |
 | **China Trademark FAQ** | Answers: cost, timeline, Madrid, classes, disputes | [Open](faq.html) |
 
 
