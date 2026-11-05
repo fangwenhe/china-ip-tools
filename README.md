@@ -17,6 +17,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Amazon Brand Registry Eligibility** | Can your CNIPA mark enroll now? | [Open](amazon-brand-registry-checker.html) |
 | **Copyright Registration Checklist** | Materials by work type (art/text/audio/software) | [Open](copyright-checklist.html) |
 | **Copyright Term & Fee Calculator** | Protection term (lifetime+50 / 50 yrs post-publication) + CPCC fees | [Open](copyright-term-fee-calculator.html) |
+| **Software Copyright Source-Code Document Formatter** | Paste code → CPCC 60-page deposit document (first 30 + last 30, 50 lines/page, name+version header), print to PDF | [Open](software-copyright-source-formatter.html) |
 | **China vs US vs EU Comparison** | Cost, timeline & rules side by side | [Open](china-us-eu-comparison.html) |
 | **Brand Name Checker** | Distinctiveness / generic-word / length heuristic | [Open](brand-name-checker.html) |
 | **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |

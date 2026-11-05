@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Software Copyright Source Code Document Formatter (软著) — Free</title>
+<meta name="description" content="Free browser tool: format your source code into the China software copyright (计算机软件著作权) deposit document — CPCC 60-page rule (first 30 + last 30), 50 lines/page, software name + version header. Print to PDF. No upload.">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/software-copyright-source-formatter.html">
+<style>
+:root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+.wrap{max-width:820px;margin:0 auto;padding:0 20px}
+header{padding:22px 0;border-bottom:1px solid var(--line)}
+.brand{font-weight:700;color:var(--acc);font-size:16px}
+.brand a{color:var(--mut);font-weight:400;font-size:13px;margin-left:8px;text-decoration:none}
+.hero{padding:36px 0 14px}
+.hero h1{font-size:25px;line-height:1.3;margin-bottom:10px}
+.hero p{color:var(--mut);font-size:15px}
+h2.sec{font-size:18px;margin:26px 0 6px;padding-top:10px;border-top:1px solid var(--line)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0}
+label{display:block;font-size:13.5px;color:var(--mut);margin:12px 0 5px}
+input{width:100%;background:#0d1220;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:11px 12px;font-size:15px;font-family:inherit}
+textarea{width:100%;min-height:220px;background:#0d1220;border:1px solid var(--line);color:var(--txt);border-radius:8px;padding:12px;font-size:12.5px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre;overflow:auto}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:560px){.row{grid-template-columns:1fr}}
+.btn{display:inline-block;background:var(--acc);color:#1a1408;border:0;padding:13px 22px;border-radius:10px;font-size:15.5px;font-weight:700;margin-top:14px;cursor:pointer}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--mut);font-weight:600;margin-left:8px}
+.summary{background:#0d1220;border:1px solid var(--line);border-radius:10px;padding:16px;margin-top:14px;display:none}
+.summary.show{display:block}
+.summary b{color:var(--acc)}
+.summary p{color:var(--mut);font-size:14px;margin-top:6px}
+.rule{font-size:13.5px;color:var(--mut);background:#0d1220;border:1px dashed var(--line);border-radius:10px;padding:14px 16px;margin-top:14px}
+.rule b{color:var(--txt)}
+.cta{margin-top:18px;font-size:14px;color:var(--mut)}.cta a{color:var(--acc)}
+footer{border-top:1px solid var(--line);padding:22px 0;margin-top:26px;color:var(--mut);font-size:13px}
+footer a{color:var(--acc);text-decoration:none}
+/* output pages */
+.doc{margin-top:24px}
+.page{background:#fff;color:#111;width:210mm;min-height:297mm;margin:0 auto 18px;padding:20mm 18mm;box-shadow:0 2px 14px rgba(0,0,0,.4);position:relative}
+.page .phead{display:flex;justify-content:space-between;font-size:11pt;border-bottom:1px solid #333;padding-bottom:6px;margin-bottom:12px;font-family:Arial,sans-serif}
+.page .pbody{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:9.5pt;line-height:1.35;white-space:pre-wrap;word-break:break-all}
+.dropnote{background:#fff3cd;border:1px solid #e0c060;color:#6b5410;padding:10px 14px;font-size:12pt;text-align:center;margin:0 auto 18px;width:210mm}
+@media print{
+  body{background:#fff}
+  header,.hero,.card,.cta,footer,.no-print,.dropnote{display:none !important}
+  .doc{margin:0}
+  .page{box-shadow:none;margin:0;width:auto;min-height:auto;padding:0;border-radius:0;page-break-after:always}
+  @page{size:A4;margin:18mm}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="brand">Huaqing IP · Software Copyright Formatter<a href="index.html">← Back to all tools</a></div></div></header>
+
+<div class="hero wrap">
+  <h1>China software copyright source code document formatter</h1>
+  <p>Paste your source code and get a print-ready deposit document that matches the China Copyright Protection Center (CPCC / 中国版权保护中心) rules for a software copyright (计算机软件著作权) registration. Your code never leaves this browser.</p>
+</div>
+
+<div class="wrap no-print">
+  <h2 class="sec">A. Software information</h2>
+  <div class="card">
+    <div class="row">
+      <div><label>Software name (English / as on the form)</label><input id="swName" placeholder="e.g. MyShop POS System"></div>
+      <div><label>Version number</label><input id="swVer" placeholder="e.g. V1.0"></div>
+    </div>
+    <div class="row">
+      <div><label>Lines per page (CPCC standard: 50)</label><input id="lpp" type="number" value="50" min="20" max="60"></div>
+      <div><label>Pages to deposit when the code is long (CPCC standard: 60)</label><input id="maxPages" type="number" value="60" min="30" step="10"></div>
+    </div>
+  </div>
+
+  <h2 class="sec">B. Paste your source code</h2>
+  <div class="card">
+    <label>Concatenate your main source files in order, then paste here (the tool paginates it)</label>
+    <textarea id="code" placeholder="// Paste your source code here…&#10;// Include the entry point, core modules and the most characteristic code first.&#10;// Blank lines are kept; the document is built entirely in your browser."></textarea>
+    <button class="btn" onclick="build()">Build deposit document</button>
+    <button class="btn ghost" onclick="window.print()">Print / save as PDF</button>
+    <div class="summary" id="summary"></div>
+    <div class="rule">
+      <b>CPCC source-code deposit rules this tool applies:</b>
+      (1) Submit the source code as <b>60 A4 pages</b>; if the code is longer, file the <b>first 30 pages + last 30 pages</b> and leave out the middle.
+      (2) Each page normally carries <b>at least 50 lines</b> of code.
+      (3) Every page header shows the <b>software name and version</b>, with the page number on the right.
+      (4) Separately, a <b>user manual / design document (~60 pages)</b> is deposited alongside.
+      This is a formatting aid; confirm the current CPCC checklist before filing.
+    </div>
+  </div>
+
+  <p class="cta">We file software copyright (软著) registration for foreign applicants — document preparation, formatting, correction notices and the certificate. <a href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a free call</a> · Related: <a href="copyright-term-fee-calculator.html">Copyright term &amp; fee calculator</a> · <a href="copyright-checklist.html">Registration checklist</a></p>
+</div>
+
+<div class="doc" id="doc"></div>
+
+<footer class="no-print"><div class="wrap">
+  © 2026 Huaqing Innovation (Huaqing IP / 华青创新) · <a href="https://huaqingip.com">Main site</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a>
+</div></footer>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"China Software Copyright Source Code Document Formatter","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://huaqingip.com/china-ip-tools/software-copyright-source-formatter.html","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}
+</script>
+
+<script>
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function build(){
+  var name=document.getElementById('swName').value.trim()||'Untitled Software';
+  var ver=document.getElementById('swVer').value.trim()||'V1.0';
+  var lpp=Math.max(20,parseInt(document.getElementById('lpp').value)||50);
+  var maxP=Math.max(30,parseInt(document.getElementById('maxPages').value)||60);
+  var raw=document.getElementById('code').value.replace(/\t/g,'    ');
+  var lines=raw.split('\n');
+  if(lines.length<3){alert('Please paste your source code first.');return;}
+  // drop fully trailing blank lines but keep content
+  while(lines.length && lines[lines.length-1].trim()==='') lines.pop();
+  var pages=[];
+  for(var i=0;i<lines.length;i+=lpp){pages.push(lines.slice(i,i+lpp));}
+  var total=pages.length;
+  var kept, droppedFrom, droppedTo;
+  if(total<=maxP){
+    kept=pages; droppedFrom=0; droppedTo=0;
+  }else{
+    var half=maxP/2;
+    kept=pages.slice(0,half).concat(pages.slice(total-half));
+    droppedFrom=half+1; droppedTo=total-half; // 1-indexed range
+  }
+  var html='';
+  kept.forEach(function(pg,idx){
+    var pageNo=idx+1;
+    html+='<div class="page"><div class="phead"><span>'+esc(name)+' '+esc(ver)+'</span><span>第 '+pageNo+' 页 / Page '+pageNo+'</span></div><div class="pbody">'+esc(pg.join('\n'))+'</div></div>';
+  });
+  if(droppedFrom>0){
+    html='<div class="dropnote no-print">Pages '+droppedFrom+'–'+droppedTo+' of your '+total+' total pages were omitted (CPCC keeps first 30 + last 30 when the code exceeds 60 pages).</div>'+html;
+  }
+  document.getElementById('doc').innerHTML=html;
+  var s=document.getElementById('summary');s.className='summary show';
+  var keepCount=kept.length;
+  s.innerHTML='Total code lines: <b>'+lines.length+'</b> · Total pages: <b>'+total+'</b> · Pages in this deposit: <b>'+keepCount+'</b> (at '+lpp+' lines/page).'
+    +(droppedFrom>0?('<p>Your code is long, so pages <b>'+droppedFrom+'–'+droppedTo+'</b> are omitted and only the first '+keepCount/2+' + last '+(keepCount/2)+' pages are kept — matching the CPCC 60-page rule. The dropped-middle notice above is hidden when you print.</p>')
+    :('<p>Your code is '+total+' page(s) or fewer, so the whole listing is deposited. Remember to also attach a user manual / design document of about the same length.</p>'));
+  document.getElementById('doc').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
