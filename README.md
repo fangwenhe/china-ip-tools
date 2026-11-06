@@ -26,6 +26,7 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Madrid China Fee Calculator** | WIPO 2026 fees: application (CHF 220/110) & renewal (441/220) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
+| **Trademark Squatting Response Advisor** | Someone registered your brand in China (抢注 / bad faith): rank opposition vs invalidation (5-yr/well-known exception) vs 撤三 vs civil action, with deadlines, fees & evidence | [Open](trademark-squatting-response-advisor.html) |
 | **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation (撤三) | [Open](trademark-use-evidence-builder.html) |
 | **Madrid Refusal Deadline Calculator** | WIPO provisional refusal: 15/30-day response & 3-month evidence window | [Open](madrid-china-refusal-deadline.html) |
 | **Refusal Review Deadline Tracker** | Strict 15-day review deadline, days remaining, weekend/holiday rollover, 30-day court-appeal date | [Open](trademark-refusal-deadline-tracker.html) |
