@@ -20,11 +20,12 @@ A growing collection of **free, zero-dependency browser tools** for foreign bran
 | **Software Copyright Source-Code Document Formatter** | Paste code → CPCC 60-page deposit document (first 30 + last 30, 50 lines/page, name+version header), print to PDF | [Open](software-copyright-source-formatter.html) |
 | **China vs US vs EU Comparison** | Cost, timeline & rules side by side | [Open](china-us-eu-comparison.html) |
 | **Brand Name Checker** | Distinctiveness / generic-word / length heuristic | [Open](brand-name-checker.html) |
-| **Trademark Watch & Opposition Setup** | Monitoring + 3-month opposition checklist | [Open](trademark-watch-checklist.html) |
+| **Trademark Watch & Opposition Setup** | Monitoring + opposition checklist (3 months, 2 months from 2027) | [Open](trademark-watch-checklist.html) |
 | **Refusal Response Checklist** | 15-day review window, evidence and response steps | [Open](refusal-response-checklist.html) |
 | **Chinese Name Strategy Helper** | Plan the Chinese-character / pinyin version of a brand | [Open](chinese-name-helper.html) |
 | **Madrid China Fee Calculator** | WIPO 2026 fees: application (CHF 220/110) & renewal (441/220) plus China-phase requirements | [Open](madrid-china-fee-calculator.html) |
 | **Opposition Grounds Advisor** | 4 questions: can you oppose, absolute vs relative grounds | [Open](opposition-grounds-advisor.html) |
+| **Opposition Deadline Checker** | Publication date → 3 months (before 2027) or 2 months (from 1 Jan 2027), exact deadline and days left | [Open](opposition-window-checker.html) |
 | **Invalidation Grounds Checker** | Challenge a registered mark; 5-year limit & exceptions | [Open](trademark-invalidation-checker.html) |
 | **Trademark Squatting Response Advisor** | Someone registered your brand in China (抢注 / bad faith): rank opposition vs invalidation (5-yr/well-known exception) vs 撤三 vs civil action, with deadlines, fees & evidence | [Open](trademark-squatting-response-advisor.html) |
 | **Use-Evidence Checklist Builder** | Score use evidence for 3-year non-use cancellation (撤三) | [Open](trademark-use-evidence-builder.html) |

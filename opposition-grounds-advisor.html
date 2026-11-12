@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>China Trademark Opposition Grounds Advisor — Can You Oppose? | Huaqing IP</title>
-<meta name="description" content="Answer a few questions to see whether you can oppose a conflicting China trademark, on what grounds (absolute vs relative), the 3-month window, the CNY 450 fee and the agent requirement.">
+<meta name="description" content="Answer a few questions to see whether you can oppose a conflicting China trademark, on what grounds (absolute vs relative), the 3-month window (2 months from 1 Jan 2027), the CNY 450 fee and the agent requirement.">
 <link rel="canonical" href="https://huaqingip.com/china-ip-tools/opposition-grounds-advisor.html">
 <style>
   :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
@@ -32,7 +32,7 @@
   <h1>Trademark Opposition Grounds Advisor</h1>
   <div class="sub">A conflicting mark is in preliminary publication in China. Answer 4 questions to see if you can oppose, on what grounds, and the deadline.</div>
   <div class="card">
-    <div class="q">1. Is the conflicting mark still within the 3-month publication (opposition) window?</div>
+    <div class="q">1. Is the conflicting mark still within the opposition window (3 months — or 2 months if published on/after 1 Jan 2027)?</div>
     <div class="opts" data-k="window"><div class="opt" data-v="yes">Yes, still in window</div><div class="opt" data-v="no">No / not sure</div></div>
     <div class="q">2. Do you hold an earlier trademark or earlier right (or have used a similar mark with recognition)?</div>
     <div class="opts" data-k="right"><div class="opt" data-v="reg">Earlier registered/pending mark</div><div class="opt" data-v="use">Used mark with recognition</div><div class="opt" data-v="none">No earlier right</div></div>
@@ -57,10 +57,10 @@
   function calc(){
     if(Object.keys(a).length<4)return;
     var r=document.getElementById('res'),cls,msg;
-    if(a.window==='no'){cls='bad';msg='Outside the 3-month window you cannot oppose — the mark proceeds to registration. Your route is invalidation (longer, costlier; official fee CNY 675). Act fast next time with a watch.';}
+    if(a.window==='no'){cls='bad';msg='Outside the opposition window (3 months, or 2 months from 1 Jan 2027) you cannot oppose — the mark proceeds to registration. Your route is invalidation (longer, costlier; official fee CNY 675). Act fast next time with a watch.';}
     else if(a.abs==='yes'){cls='ok';msg='You can oppose on ABSOLUTE grounds — anyone may file these, even without an earlier mark. Gather evidence of the defect and file within the window via a recorded agent.';}
     else if(a.right==='none'){cls='warn';msg='Without an earlier right or an absolute ground, a relative-ground opposition is weak and normally limited to the prior-right holder. Consider whether you actually have prior use, a copyright or trade-name right.';}
-    else if(a.sim==='yes'){cls='ok';msg='Strong position: oppose on RELATIVE grounds (conflict with your earlier mark/right + likelihood of confusion). File within the 3-month window with your registration/pending number and use evidence; foreign opponents need a CNIPA-recorded agent.';}
+    else if(a.sim==='yes'){cls='ok';msg='Strong position: oppose on RELATIVE grounds (conflict with your earlier mark/right + likelihood of confusion). File within the applicable window (3 months, or 2 months from 1 Jan 2027) with your registration/pending number and use evidence; foreign opponents need a CNIPA-recorded agent.';}
     else {cls='warn';msg='You have an earlier right but the goods/marks differ, so confusion is hard to show. An opposition may still be possible if the marks are identical/well-known; gather evidence before deciding.';}
     r.className='result '+cls;r.style.display='block';r.textContent=msg;
   }

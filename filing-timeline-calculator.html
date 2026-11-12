@@ -51,7 +51,7 @@
         <input type="date" id="refusal">
       </div>
     </div>
-    <label>Or: date a conflicting mark began publication <span class="hint">(optional — for the 3-month opposition window)</span></label>
+    <label>Or: date a conflicting mark began publication <span class="hint">(optional — for the opposition window: 3 months, or 2 months from 1 Jan 2027)</span></label>
     <input type="date" id="publish">
   </div>
 
@@ -77,7 +77,7 @@
     <div class="warnbox">
       <b>These two deadlines are easy to miss from overseas:</b><br>
       • <b>Refusal review (驳回复审):</b> only <b>15 days</b> from receiving the CNIPA refusal — a Chinese agent must respond in Chinese.<br>
-      • <b>Opposition (异议):</b> only <b>3 months</b> from preliminary publication; after that you must use invalidation instead.
+      • <b>Opposition (异议):</b> <b>3 months</b> from preliminary publication — <b>2 months</b> if the mark is published on or after 1 January 2027. After the window closes you must use invalidation instead.
     </div>
     <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Have an active deadline? Get help now</a>
     <a class="ghost" href="index.html">← All free tools</a>
@@ -90,11 +90,12 @@
   function addDays(d,n){var x=new Date(d.getTime());x.setUTCDate(x.getUTCDate()+n);return x}
   function fmt(d){if(!d)return '—';return d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric',timeZone:'UTC'})}
   function iso(d){return d.toISOString().slice(0,10)}
+  function addMonthsUTC(d,n){var y=d.getUTCFullYear(),m=d.getUTCMonth()+n,day=d.getUTCDate();var last=new Date(Date.UTC(y,m+1,0)).getUTCDate();return new Date(Date.UTC(y,m,Math.min(day,last)))}
   var stages=[
     {n:'Filing date (申请日)',off:0,note:'Application submitted by your Chinese agent',c:'var(--ok)'},
     {n:'Acceptance notice (受理通知书)',off:30,note:'~1 month — filing number issued',c:'var(--ok)'},
     {n:'Substantive examination',off:120,note:'~4 months — examiner reviews distinctiveness/conflicts',c:'var(--mut)'},
-    {n:'Preliminary approval & publication (初审公告)',off:180,note:'~6 months — 3-month opposition window opens',c:'var(--acc)'},
+    {n:'Preliminary approval & publication (初审公告)',off:180,note:'~6 months — opposition window opens',c:'var(--acc)'},
     {n:'Opposition window closes',off:270,note:'Last day for third parties to oppose',c:'var(--acc)'},
     {n:'Registration & certificate (注册证)',off:300,note:'~9–12 months in a smooth case',c:'var(--ok)'}
   ];
@@ -103,8 +104,12 @@
     var html='';
     if(fv){
       var f=new Date(fv+'T00:00:00Z');
-      stages.forEach(function(s){
-        html+='<tr><td><span class="dot" style="background:'+s.c+'"></span>'+s.n+'</td><td class="d">'+fmt(addDays(f,s.off))+'</td><td class="hint" style="color:var(--mut)">'+s.note+'</td></tr>';
+      var estPub=addDays(f,180), twoMonth=(estPub>=new Date(Date.UTC(2027,0,1)));
+      stages.forEach(function(st){
+        var s2=st;
+        if(st.n.indexOf('Opposition window closes')===0){s2={n:st.n,off:twoMonth?240:270,note:'Last day for third parties to oppose ('+(twoMonth?'2-month':'3-month')+' window)',c:st.c};}
+        if(st.n.indexOf('Preliminary approval')===0){s2={n:st.n,off:st.off,note:'~6 months — '+(twoMonth?'2-month':'3-month')+' opposition window opens',c:st.c};}
+        html+='<tr><td><span class="dot" style="background:'+s2.c+'"></span>'+s2.n+'</td><td class="d">'+fmt(addDays(f,s2.off))+'</td><td class="hint" style="color:var(--mut)">'+s2.note+'</td></tr>';
       });
     }else{
       html='<tr><td colspan="3" style="color:var(--mut)">Pick a filing date to see the estimated schedule.</td></tr>';
@@ -116,8 +121,9 @@
       dh+='<div class="warnbox" style="border-color:var(--bad);background:rgba(221,93,93,.08)">Refusal review must be filed within <span class="deadline">15 days</span> of receipt — by <span class="deadline">'+fmt(rd)+'</span>. A CNIPA-recorded agent must respond in Chinese.</div>';
     }
     if(pv){
-      show=true;var p=new Date(pv+'T00:00:00Z');var pe=addDays(p,90);
-      dh+='<div class="warnbox" style="margin-top:10px">Opposition window: from '+fmt(p)+' to <b>'+fmt(pe)+'</b>. After this date the mark registers and you must seek invalidation instead.</div>';
+      show=true;var p=new Date(pv+'T00:00:00Z');
+      var twoM=(p>=new Date(Date.UTC(2027,0,1)));var pe=twoM?addMonthsUTC(p,2):addDays(p,90);
+      dh+='<div class="warnbox" style="margin-top:10px">Opposition window ('+(twoM?'2 months — published on/after 1 Jan 2027':'3 months')+'): from '+fmt(p)+' to <b>'+fmt(pe)+'</b>. After this date the mark registers and you must seek invalidation instead.</div>';
     }
     $('deadlineCard').style.display=show?'block':'none';
     $('deadlines').innerHTML=dh;
