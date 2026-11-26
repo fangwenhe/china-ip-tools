@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>China Trademark Application Status Decoder | CNIPA Status Meaning | Huaqing IP</title>
+<meta name="description" content="Decode your CNIPA China trademark application status: accepted, under substantive examination, correction notice, rejected, preliminary approval, opposition pending, registered. What it means, typical waiting time, next step and deadline — free browser tool, no sign-up.">
+<meta name="keywords" content="china trademark application status, cnipa status meaning, chinese trademark check status, 实质审查中 meaning, preliminary approval publication china, trademark opposition pending china">
+<link rel="canonical" href="https://huaqingip.com/china-ip-tools/trademark-status-decoder.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="China Trademark Application Status Decoder | Huaqing IP">
+<meta property="og:description" content="Pick your CNIPA status to see what it means, how long it typically takes, the next action and any strict deadline.">
+<meta property="og:url" content="https://huaqingip.com/china-ip-tools/trademark-status-decoder.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23d4a24e'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='%231a1407' font-family='Arial' font-weight='bold'>IP</text></svg>">
+<style>
+  :root{--bg:#0f1420;--card:#182031;--line:#27324a;--txt:#e8edf6;--mut:#9aa7bd;--acc:#d4a24e;--ok:#3fa66e;--warn:#e0a23c;--bad:#dd5d5d;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;padding:22px 14px 54px}
+  .wrap{max-width:820px;margin:0 auto}
+  .top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mut);margin-bottom:20px}
+  .top a{color:var(--acc);text-decoration:none}
+  h1{font-size:27px;line-height:1.25;letter-spacing:-.3px;margin-bottom:8px}
+  h1 em{font-style:normal;color:var(--acc)}
+  .sub{color:var(--mut);font-size:14.5px;margin-bottom:22px;max-width:680px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+  label{display:block;font-size:13px;color:var(--mut);margin-bottom:7px}
+  select{width:100%;background:#0c111c;border:1px solid var(--line);border-radius:10px;color:var(--txt);padding:12px 14px;font-size:16px}
+  select:focus{outline:none;border-color:var(--acc)}
+  .result{display:none;margin-top:16px;border-radius:12px;padding:16px;border:1px solid var(--line);background:#0c111c}
+  .result.show{display:block}
+  .big{font-size:22px;font-weight:800;letter-spacing:-.3px;line-height:1.25;margin-bottom:4px}
+  .big small{font-size:13px;font-weight:600;color:var(--mut);letter-spacing:0}
+  .cn{color:var(--mut);font-size:13.5px;margin-bottom:12px}
+  .rows{margin-top:12px;border-top:1px solid var(--line)}
+  .row{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+  .row span:first-child{color:var(--mut);min-width:118px;flex:none}
+  .row span:last-child{font-weight:600}
+  .pill{display:inline-block;border-radius:999px;padding:3px 10px;font-size:12.5px;font-weight:700}
+  .pill.proc{background:rgba(212,162,78,.14);color:var(--acc);border:1px solid rgba(212,162,78,.5)}
+  .pill.warn{background:rgba(224,162,60,.14);color:var(--warn);border:1px solid rgba(224,162,60,.5)}
+  .pill.ok{background:rgba(63,166,110,.14);color:var(--ok);border:1px solid rgba(63,166,110,.5)}
+  .pill.bad{background:rgba(221,93,93,.12);color:var(--bad);border:1px solid rgba(221,93,93,.5)}
+  .links{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px}
+  .links a{border:1px solid var(--line);color:var(--acc);text-decoration:none;padding:8px 12px;border-radius:9px;font-size:13px}
+  .links a:hover{border-color:var(--acc)}
+  .note{font-size:12.5px;color:var(--mut);margin-top:12px}
+  .note b{color:var(--txt)}
+  .cta{display:inline-block;margin-top:14px;background:var(--acc);color:#1a1407;text-decoration:none;font-weight:800;padding:11px 16px;border-radius:9px;font-size:14px}
+  .ghost{display:inline-block;margin-top:14px;margin-left:8px;border:1px solid var(--line);color:var(--mut);text-decoration:none;padding:10px 14px;border-radius:9px;font-size:13px}
+  h2{font-size:17px;margin:28px 0 14px}
+  .flow{display:grid;grid-template-columns:1fr;gap:10px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .step b{display:block;font-size:14px;margin-bottom:3px}
+  .step p{font-size:13px;color:var(--mut)}
+  details{border-top:1px solid var(--line);padding:12px 0}
+  details summary{cursor:pointer;font-size:14px;font-weight:600}
+  details p{font-size:14px;color:var(--mut);margin-top:8px}
+  footer{border-top:1px solid var(--line);margin-top:30px;padding-top:16px;font-size:12.5px;color:var(--mut)}
+  footer a{color:var(--acc);text-decoration:none}
+  @media(max-width:600px){h1{font-size:23px}.row{flex-direction:column;gap:3px}.row span:first-child{min-width:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top"><a href="index.html">← All free tools</a><span>Huaqing IP · CNIPA-recorded agency</span></div>
+
+  <h1>What does my <em>China trademark status</em> mean?</h1>
+  <div class="sub">Pick the status shown on your CNIPA record (商标网 / Trademark Office database). This decoder explains what the stage means, the typical waiting time, your next action and any strict deadline. It does not replace the gazette entry or your agent's case file.</div>
+
+  <div class="card">
+    <label for="status">Current CNIPA status (choose the closest match)</label>
+    <select id="status">
+      <option value="">— Select a status —</option>
+      <option value="accepted">受理通知书 · Application accepted / formality passed</option>
+      <option value="substantive">实质审查中 · Under substantive examination</option>
+      <option value="correction">补正通知 · Correction notice issued</option>
+      <option value="rejected">驳回 / 部分驳回 · Rejected or partially rejected</option>
+      <option value="preliminary">初步审定公告 · Preliminary approval &amp; publication</option>
+      <option value="opposition">异议中 · Opposition pending</option>
+      <option value="registered">注册公告 / 已注册 · Registered, certificate issued</option>
+      <option value="challenged">无效宣告 / 撤三待决 · Invalidation or non-use cancellation pending</option>
+      <option value="withdrawn">视为撤回 / 不予受理 · Deemed withdrawn or not accepted</option>
+    </select>
+    <div class="result" id="res"></div>
+  </div>
+
+  <h2>The smooth case, step by step</h2>
+  <div class="flow">
+    <div class="step"><b>1. Filing &amp; formal examination</b><p>CNIPA checks applicant qualification, documents, Nice list, POA and fee. About one month in a smooth case. Completing formalities establishes the filing date.</p></div>
+    <div class="step"><b>2. Substantive examination</b><p>Examiner reviews distinctiveness, prior identical/similar marks and prohibited elements. Statutory ceiling: nine months from receipt; typical four to six months in a smooth case. CNIPA does not issue a search report.</p></div>
+    <div class="step"><b>3. Preliminary approval &amp; publication</b><p>Approved marks are published in the Trademark Gazette. Third parties may oppose: three months for publications before 1 January 2027; two months under the 2026 revised Trademark Law for publications on or after that date.</p></div>
+    <div class="step"><b>4. Registration</b><p>If no opposition is filed, or the opposition fails, the mark registers and a certificate issues. The exclusive right lasts ten years, renewable indefinitely.</p></div>
+  </div>
+
+  <h2>Frequently asked</h2>
+  <div>
+    <details><summary>What does “实质审查中” (under substantive examination) mean?</summary><p>The examiner is checking whether your mark can register: distinctiveness, conflict with earlier identical/similar marks on identical or similar goods, and any prohibited elements. This stage does not yet mean approval — a refusal may still issue. CNIPA does not provide a search report.</p></details>
+    <details><summary>How long does substantive examination take in China?</summary><p>The statutory ceiling is nine months from receipt of the application (Trademark Law Art. 32). In a smooth case preliminary approval usually arrives around four to six months after filing; refusals, oppositions or backlog push the date later.</p></details>
+    <details><summary>What should I do after a rejection (驳回通知)?</summary><p>You have <b>15 calendar days from receipt</b> to request a CNIPA review (复审). The review decision issues within nine months (extendable three); if it goes against you, you may sue the Beijing IP Court within 30 days. Act through a CNIPA-recorded agent; foreign holders cannot file directly.</p></details>
+    <details><summary>What does preliminary approval publication (初步审定公告) mean?</summary><p>It means examination passed and the mark was published for opposition. The registration has not issued yet. The opposition window is three months (publications before 1 Jan 2027) or two months (publications on/after 1 Jan 2027). If no opposition succeeds, the mark registers at the end of the window.</p></details>
+    <details><summary>My status says “异议中” — how long until a decision?</summary><p>CNIPA must decide the opposition within 12 months after the opposition window ends, extendable by six months in special cases. Oppositions typically add many months to the registration timeline, so respond promptly through your agent.</p></details>
+  </div>
+
+  <div class="card">
+    <b style="font-size:14px">Not sure which status applies, or facing a refusal / opposition?</b>
+    <p style="font-size:13px;color:var(--mut);margin-top:6px">Send the application number or a screenshot of the CNIPA record. We map the status to your case, check any open deadline and prepare the response through a recorded agency.</p>
+    <a class="cta" href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a 30-min check</a>
+    <a class="ghost" href="filing-timeline-calculator.html">Calculate your timeline →</a>
+  </div>
+
+  <div class="note">Sources: <b>Trademark Law of the PRC (2026 revision, effective 1 Jan 2027)</b> Art. 32 (nine-month examination), Art. 36 (two-month opposition), Art. 37 (15-day review); Implementing Regulations Art. 18 (30-day correction); CNIPA fee schedule; CCPIT IP in China overview (opposition decision ~12 months after window). Status labels follow the CNIPA Trademark Office record. This page is general information, not legal advice.</div>
+
+  <footer>
+    <div>© 2026 Huaqing Innovation (Huaqing IP / 华青创新) · CNIPA-recorded trademark agency</div>
+    <div style="margin-top:6px"><a href="https://huaqingip.com">huaqingip.com</a> · <a href="mailto:ip@huaqingip.com">ip@huaqingip.com</a> · <a href="https://calendly.com/huaqingip/30min" target="_blank" rel="noopener">Book a call</a></div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var DATA={
+    accepted:{
+      tag:['proc','In progress'],
+      title:'Application accepted',
+      cn:'受理通知书 · formality examination passed',
+      meaning:'Formalities are complete: applicant qualification, documents, Nice list, power of attorney and fee check out. The filing date is established and the application has entered the substantive examination queue.',
+      typical:'Formal examination takes about one month after filing. Substantive examination follows; there is no separate action you must take while accepted.',
+      next:'No action is required yet. Keep your contact details current so a correction or refusal notice reaches your agent on time.',
+      links:[['filing-timeline-calculator.html','Filing timeline calculator →'],['foreign-applicant-materials-checklist.html','Foreign applicant materials checklist →']]
+    },
+    substantive:{
+      tag:['proc','Under examination'],
+      title:'Under substantive examination',
+      cn:'实质审查中',
+      meaning:'The examiner reviews distinctiveness, prior identical/similar marks on identical or similar goods, and any prohibited elements. CNIPA does not issue a search report, so a refusal can still arrive at this stage.',
+      typical:'Statutory ceiling: nine months from receipt of the application (Art. 32). Smooth cases reach preliminary approval around four to six months after filing; backlog or office actions delay it.',
+      next:'Prepare use evidence and design justifications now in case a partial refusal arrives. Check whether any earlier conflicting marks need to be monitored.',
+      links:[['filing-timeline-calculator.html','Filing timeline calculator →'],['brand-name-checker.html','Brand name registrability checker →']]
+    },
+    correction:{
+      tag:['warn','Fix paperwork'],
+      title:'Correction notice issued',
+      cn:'补正通知 · formality defect',
+      meaning:'A paperwork or formality defect was found — documents, goods list, owner address, POA or the mark specimen. This is a procedural fix, not a refusal of the mark itself.',
+      typical:'You have <b>30 calendar days from receipt</b> to fix and resubmit (Implementing Regulations Art. 18). If fixed on time, the filing date is preserved; missing the deadline leads to refusal.',
+      next:'Gather the missing item and respond through your agent. Do not wait for the end of the window — translation or notarization may add time.',
+      links:[['cnipa-correction-notice-tracker.html','30-day correction deadline tracker →'],['foreign-applicant-materials-checklist.html','Materials checklist →']]
+    },
+    rejected:{
+      tag:['bad','Urgent deadline'],
+      title:'Rejected / partially rejected',
+      cn:'驳回 / 部分驳回',
+      meaning:'The examiner found absolute or relative refusal grounds. A partial rejection covers only the contested goods or classes; the rest of the mark may still proceed.',
+      typical:'Strict <b>15 calendar days from receipt</b> to request a CNIPA review (复审). Review decision within nine months, extendable three; an unfavourable decision can be appealed to the Beijing IP Court within 30 days.',
+      next:'Do not let the 15 days pass. Translate the notice, map each ground to evidence, and file through a recorded agent. Day 1 is the day after receipt.',
+      links:[['trademark-refusal-deadline-tracker.html','15-day refusal review tracker →'],['refusal-response-checklist.html','Refusal response checklist →']]
+    },
+    preliminary:{
+      tag:['proc','Open to opposition'],
+      title:'Preliminary approval & publication',
+      cn:'初步审定公告',
+      meaning:'Examination passed and the mark was published in the Trademark Gazette. Registration has not issued yet; third parties now have a window to file an opposition.',
+      typical:'Opposition window: <b>three months</b> if published before 1 January 2027; <b>two months</b> under the 2026 revised Law (Art. 36) if published on or after 1 January 2027. Check the publication date, not today’s date.',
+      next:'Watch the Gazette and earlier-rights holders. If no opposition succeeds, the mark registers at the end of the window.',
+      links:[['opposition-window-checker.html','Opposition deadline checker →'],['opposition-grounds-advisor.html','Opposition grounds advisor →']]
+    },
+    opposition:{
+      tag:['warn','Opposition pending'],
+      title:'Opposition pending',
+      cn:'异议中',
+      meaning:'A third party filed an opposition during publication. CNIPA reviews the opponent’s earlier rights and confusing-similarity evidence before deciding whether registration may proceed.',
+      typical:'CNIPA decides within <b>12 months after the opposition window ends</b>, extendable six months in special cases. An opposition usually adds many months to the timeline.',
+      next:'Respond through your recorded agent with your own earlier-rights, use evidence and distinctiveness arguments. If the opposition succeeds, a review route remains available.',
+      links:[['opposition-grounds-advisor.html','Opposition grounds advisor →'],['trademark-squatting-response-advisor.html','Squatting response advisor →']]
+    },
+    registered:{
+      tag:['ok','Registered'],
+      title:'Registered · certificate issued',
+      cn:'注册公告 / 已注册',
+      meaning:'The exclusive right has been established and the registration certificate issued. The mark is protected for ten years from the registration date.',
+      typical:'Renewal opens 12 months before expiry; a six-month grace period applies with a surcharge. Keep use evidence on file — a three-year non-use cancellation can be filed after registration.',
+      next:'Diarize the renewal date and retain sales, packaging, advertising and channel evidence showing use in China.',
+      links:[['trademark-renewal-calculator.html','Renewal & grace-period calculator →'],['trademark-use-evidence-builder.html','Use-evidence checklist builder →']]
+    },
+    challenged:{
+      tag:['bad','Post-registration challenge'],
+      title:'Invalidation / non-use cancellation pending',
+      cn:'无效宣告 / 撤三待决',
+      meaning:'A third party is challenging the registered mark after registration: invalidation on absolute or relative grounds, or non-use cancellation (撤三) after three years of non-use.',
+      typical:'Relative-ground invalidation must be filed within five years of registration; the five-year bar does not apply to bad-faith registration against a well-known mark. Non-use cancellation requires three years without genuine use.',
+      next:'Assemble use evidence, prior-rights arguments and a defense; recordal and filing go through a CNIPA-recorded agent.',
+      links:[['trademark-invalidation-checker.html','Invalidation grounds checker →'],['nonuse-cancellation-checker.html','Non-use cancellation checker →']]
+    },
+    withdrawn:{
+      tag:['bad','Does not proceed'],
+      title:'Deemed withdrawn / not accepted',
+      cn:'视为撤回 / 不予受理',
+      meaning:'Formalities were incomplete, the fee was unpaid, or the required agent / POA was missing, so the application was not accepted into examination.',
+      typical:'There is no examination date to wait for. Check the deficiency notice, correct it, and refile. If a foreign priority claim matters, verify the six-month Paris priority window before refiling.',
+      next:'Fix the defect first — do not resubmit the same package. Confirm whether priority, foreign registration or an earlier filing date can still be preserved.',
+      links:[['foreign-applicant-materials-checklist.html','Foreign applicant materials checklist →'],['priority-claim-calculator.html','Paris priority deadline calculator →']]
+    }
+  };
+  var sel=document.getElementById('status'),res=document.getElementById('res');
+  function render(){
+    var k=sel.value,d=DATA[k];
+    if(!d){res.className='result';res.innerHTML='';return;}
+    var links=d.links.map(function(l){return '<a href="'+l[0]+'">'+l[1]+'</a>';}).join('');
+    res.className='result show';
+    res.innerHTML=
+      '<div class="big">'+d.title+' <span class="pill '+d.tag[0]+'">'+d.tag[1]+'</span></div>'+
+      '<div class="cn">'+d.cn+'</div>'+
+      '<div class="rows">'+
+        '<div class="row"><span>What it means</span><span>'+d.meaning+'</span></div>'+
+        '<div class="row"><span>Typical timing</span><span>'+d.typical+'</span></div>'+
+        '<div class="row"><span>Next step</span><span>'+d.next+'</span></div>'+
+      '</div>'+
+      '<div class="links">'+links+'</div>';
+  }
+  sel.addEventListener('change',render);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"SoftwareApplication","name":"China Trademark Application Status Decoder","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://huaqingip.com/china-ip-tools/trademark-status-decoder.html","description":"Decode a CNIPA China trademark application status: meaning, typical waiting time, next action and strict deadline for acceptance, examination, correction, rejection, publication, opposition, registration and post-registration challenge.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"Huaqing Innovation (Huaqing IP)","url":"https://huaqingip.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"What does 实质审查中 (under substantive examination) mean for a China trademark?","acceptedAnswer":{"@type":"Answer","text":"The examiner checks distinctiveness, earlier identical or similar marks and prohibited elements. This stage does not mean approval; a refusal may still issue, and CNIPA does not provide a search report."}},
+      {"@type":"Question","name":"How long does substantive examination take in China?","acceptedAnswer":{"@type":"Answer","text":"Statutory ceiling is nine months from receipt (Trademark Law Art. 32). Smooth cases usually reach preliminary approval around four to six months after filing; refusals, oppositions or backlog delay the date."}},
+      {"@type":"Question","name":"What should I do after a China trademark rejection?","acceptedAnswer":{"@type":"Answer","text":"You have 15 calendar days from receipt to request a CNIPA review. The review decision issues within nine months (extendable three); an unfavourable decision can be appealed to the Beijing IP Court within 30 days. Foreign holders act through a recorded agent."}},
+      {"@type":"Question","name":"What does preliminary approval publication mean in China?","acceptedAnswer":{"@type":"Answer","text":"Examination passed and the mark was published for opposition. The registration has not issued yet. The opposition window is three months (publications before 1 Jan 2027) or two months (publications on/after 1 Jan 2027)."}}
+    ]}
+  ]
+}
+</script>
+</body>
+</html>
